@@ -1,6 +1,6 @@
 
-#JS Project Proposal
-####Dave Woolner
+# JS Project Proposal
+#### Dave Woolner
 Aug, 12th, 2021     
 
   # ***NYC Cinemap*** 
