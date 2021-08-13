@@ -20,14 +20,13 @@ Users will be able to:
 
 - Upon finding the users location, the map will zoom into a radius encompassing several blocks, and drop pins on the surrounding film locations. 
 
-- Films' data will be fetched from an IMDB-like API, and populate the interface with the movie details, images, links, etc.
+- Film data will be fetched from an IMDB-like API, and populate the interface with the movie details, images, links, etc.
 
 ###  Additionally
 
 -  It would be great to be able to persist a list of the movies to be watched. I'm thinking the user can save any or all of the movies by ids in local storage and fetch it to repopulate the list when the user revisits the site. 
 
 - Any stills from the location would be great to find and highlight as well. 
-
 
 
 	![wireframe](./proposal/docs/nyc_cinemap_wireframe.png)
@@ -50,7 +49,7 @@ Users will be able to:
 
 - Google fonts for, well, fonts.
 
-- Possible backend for persisitng API tokens.
+- Possible backend for persisitng API tokens. 
 
 ###  Implementation Timeline
 
@@ -71,7 +70,9 @@ Users will be able to:
 
 - stream the film! 
 
-- links to NYC film resources 
+- random search for films outside of surrounding area
+
+- links to film resources such as NYC Mayor's office, tours, soundstage info, and 411 Film production guide.
 
 - film trivia
 
