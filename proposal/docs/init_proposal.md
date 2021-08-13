@@ -30,7 +30,7 @@ Users will be able to:
 
 
 
-	![wireframe](./proposal/docs/nyc_cinemap_wireframe.png)
+	![wireframe](nyc_cinemap_wireframe.png)
   
 ###  Technologies, Libraries, APIs
 
@@ -74,4 +74,3 @@ Users will be able to:
 - links to NYC film resources 
 
 - film trivia
-
