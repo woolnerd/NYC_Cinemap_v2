@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Aug, 12th, 2021",
   "main": "index.js",
-    "browserslist": [
-      "defaults"
-    ],
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode=development",
@@ -28,6 +28,7 @@
     "babel-loader": "^8.2.2",
     "core-js": "^3.16.1",
     "css-loader": "^6.2.0",
+    "mapbox-gl": "^2.4.0",
     "mini-css-extract-plugin": "^2.2.0",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.37.5",

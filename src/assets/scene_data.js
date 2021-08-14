@@ -1,5 +1,6 @@
-{
-  "scene_data":
+
+
+export const scene_data = 
 [
   {
     "Film": "Film",
@@ -5618,5 +5619,3 @@
     "IMAGE OF LOCATION": "Y"
   }
 ]
-}
-

@@ -1,0 +1,35 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(86, 86, 235, 0.208);
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 30px;
+}
+
+.marker {
+    font-size: 16px;
+}
+
+
+#map {
+    border: 1px solid black;
+    margin: 50px;
+}
+
+
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    background: rgba(86, 86, 235, 0.108)
+}
