@@ -1,6 +1,6 @@
 
 
-export const scene_data = 
+const scene_data = 
 [
   {
     "Film": "Film",
@@ -5619,3 +5619,110 @@ export const scene_data =
     "IMAGE OF LOCATION": "Y"
   }
 ]
+
+
+
+function createGeoJSON(myData) {
+  const data = myData.slice(0);
+
+  const GeoJSON = {
+    "type": "FeatureCollection",
+    "features": []};
+
+    data.forEach(film=>{
+      GeoJSON.features.push(GeoJSONPoint(film["LONGITUDE"], film["LATITUDE"], film));
+    })
+
+  return GeoJSON
+}
+
+
+function GeoJSONPoint(long, lat, filmObj) {
+  const point = 
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          long,
+          lat
+        ]
+      },
+      "properties": filmObj
+    }
+    return point;
+  }
+
+
+function createGeoJSON1(myData) {
+  const data = myData.slice(0);
+
+  const GeoJSON = {
+    "type": "FeatureCollection",
+    "features": []
+  };
+
+  data.forEach(film => {
+    GeoJSON.features.push(GeoJSONPoint(film["LONGITUDE"], film["LATITUDE"], film));
+  })
+
+  return GeoJSON
+}
+
+export const geoJSON = createGeoJSON1(scene_data)
+
+// console.log(JSON.stringify(geoJSON))
+
+// let data = myData.slice(1)
+
+// for (let i = 0; i < data.length; i++) {
+
+//   GeoJSONPoint.geometry.coordinates[0] = data[i].LONGITUDE;
+//   GeoJSONPoint.geometry.coordinates[1] = data[i].LATITUDE;
+// }
+
+// GeoJSON.features.push(GeoJSONPoint)
+// // }
+// console.log(GeoJSON.features[0]);
+
+// const latitudes = scene_data.map(film=> {
+//   return film["LATITUDE"];
+// })
+// console.log(latitudes)
+
+// const longitudes = scene_data.map(film => {
+//   return film["LONGITUDE"];
+// })
+// console.log(longitudes)
+
+// const imdb = scene_data.map(film => {
+//   return film["IMDB LINK"];
+// })
+
+// console.log(imdb)
+
+// for (let i = 0; i <latitudes.length; i++){
+//   GeoJSONPoint.geometry.coordinates[0] = longitudes[i];
+//   GeoJSONPoint.geometry.coordinates[0] = longitudes[i];
+// }
+
+
+
+// {
+//   "type": "FeatureCollection",
+//     "features": [
+      // {
+      //   "type": "Feature",
+      //   "geometry": {
+      //     "type": "Point",
+      //     "coordinates": [
+      //       "test",
+      //       "test"
+      //     ]
+      //   },
+      //   "properties": {
+
+      //   }
+      // }
+//     ]
+// }

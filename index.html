@@ -11,7 +11,7 @@
 <body>
     <nav>
         <div class="left-nav">
-            <h3>Current Location:</h3>
+            <h3 id="cur-loc">Current Location:</h3>
         </div>
         <div class="right-nav">
             <ul>
@@ -24,40 +24,37 @@
     </nav>
     <main>
         <h1>NYC CINEMAP</h1>
+        <ul class="neighborhood">
+            <li>Downtown</li>
+            <li>Midtown</li>
+            <li>Uptown</li>
+            <li>Bronx</li>
+            <li>Brooklyn</li>
+        </ul>
         <section class="main-container">
-            <div id='map' style='width: 600px; height: 400px;'></div>
-     
-            <div class="card-container">
+            <div id="map"></div>
+            <div id="gallery">
                 <div class="card">
-                    <h3>Movie Title</h3>
-                    <p>Movie Details</p>
-                    <i>Icon</i>
+                    <img id="card-img" src="https://image.tmdb.org/t/p/w500//amwo4CjYKynZ2yKvKMxoiRSsaE1.jpg"
+                        alt="" srcset="">
                 </div>
                 <div class="card">
-                    <h3>Movie Title</h3>
-                    <p>Movie Details</p>
-                    <i>Icon</i>
-                </div><div class="card">
-                    <h3>Movie Title</h3>
-                    <p>Movie Details</p>
-                    <i>Icon</i>
-                </div><div class="card">
-                    <h3>Movie Title</h3>
-                    <p>Movie Details</p>
-                    <i>Icon</i>
-                </div>
+                    <h3 id="gallery-title" data-id="">Die Hard: with a vengeance</h3>
+                    <p id="gallery-overview"></p>
+                </div>`
             </div>
         </section>
     </main>
     <aside>
-        <div>
-            <ul>
-                <li>Movie1</li>
-                <li>Movie2</li>
-                <li>Movie3</li>
-                <li>Movie4</li>
-            </ul>
+        <div class="list-container">
+            <!-- <div class="list-movie">
+                <h3>Die Hard: with a vengeance</h3>
+                <img src="https://image.tmdb.org/t/p/w500//amwo4CjYKynZ2yKvKMxoiRSsaE1.jpg" alt="">
+            </div>
+            <div class="list-movie-2"></div>
+            <div class="list-movie"></div> -->
         </div>
     </aside>
 </body>
 </html>
+

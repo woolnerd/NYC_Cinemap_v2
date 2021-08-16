@@ -1,33 +1,63 @@
-import { getData } from "./scripts/movie"
+import { getData, movieData } from "./scripts/movie"
 import { makeMap } from "./scripts/map";
-import * as location from "./scripts/location";
-
-
+import { Component } from "./components/component";
+import { Gallery } from "./components/gallery";
+// import { success, error, options} from "./scripts/location";
+import { listCard } from "./components/list_card"
+export { addToGallery }
 import styles from "./index.scss"
-// const { success, error, options} = location;
-// const cord = navigator.geolocation.getCurrentPosition(success, error, options);
+
+const addToGallery = (data) => {
+    document.getElementById('gallery').innerHTML = Gallery(data);
+}
+
+
 
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    // console.log("test")
-    // const body = document.body;
-    // body.addEventListener('click', h1Create)
-
-    makeMap();
-
-    // console.log(cord);
-
-    navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude, position.coords.longitude);
-    });
 
 
+    // body.addEventListener('click', gallery.create)
+    
+    //renders map with current location
+    navigator.geolocation.getCurrentPosition(success, error, options)
+    const gallery = document.getElementById("gallery");
+    gallery.addEventListener('click', addToMovieList)
+    const movieList = document.querySelector(".list-container")
+    movieList.classList.add("hide");
+    const curLoc = document.getElementById("cur-loc");
+    curLoc.innerHTML = "Curent Location: -74.0079, 40.7137"
 })
 
 
 
-// const h1Create = () => {
-//     const title = document.createElement("h1");
-//     title.append("NYC Cinemap")
-//     document.body.appendChild(title);
-// }
+
+const addToMovieList = () => {
+    const movieList = document.querySelector(".list-container")
+    // if ()
+    
+    const listDiv = document.createElement("div")
+    listDiv.innerHTML = listCard();
+    movieList.appendChild(listDiv)
+    movieList.classList.remove("hide");
+}
+
+const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
+
+function success(pos) {
+    //map is created here
+    makeMap(pos.coords.longitude, pos.coords.latitude);
+
+}
+
+function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    makeMap(-74.0079, 40.7137);
+}
+
+
+

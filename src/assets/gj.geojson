@@ -1,0 +1,311 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9786505699157,
+                    40.7224452961828
+                ]
+            },
+            "properties": {
+                "Film": "*batteries not included",
+                "Year": 1987,
+                "URL Encoded Name": "%2Abatteries%20not%20included",
+                "Image File Name": "batteriesnotincluded_pf",
+                "Agency Credit": "Courtesy of Photofest",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Matthew Robbins",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0730422/",
+                "Location Display Text": "E. 5th St.<br>East Village<br>Manhattan",
+                "LATITUDE": 40.7224452961828,
+                "LONGITUDE": -73.9786505699157,
+                "Borough": "Manhattan",
+                "Neighborhood": "East Village",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://imdb.com/title/tt0092494/",
+                "Client or book location indicator": "N/A",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 190,
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0079,
+                    40.7137
+                ]
+            },
+            "properties": {
+                "Film": "12 Angry Men",
+                "Year": 1957,
+                "URL Encoded Name": "12%20Angry%20Men",
+                "Image File Name": "12AngryMen_pf",
+                "Agency Credit": "Courtesy of Photofest",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Sidney Lumet",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0001486/",
+                "Location Display Text": "New York County Courthouse<br>40 Foley Square<br>Lower Manhattan",
+                "LATITUDE": 40.7137,
+                "LONGITUDE": -74.0079,
+                "Borough": "Manhattan",
+                "Neighborhood": "Lower Manhattan",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://imdb.com/title/tt0050083/",
+                "Client or book location indicator": "New York County\nCourthouse on Foley Square.",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 40,
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9846211671829,
+                    40.7592204876521
+                ]
+            },
+            "properties": {
+                "Film": "13 Going on 30",
+                "Year": 2004,
+                "URL Encoded Name": "13%20Going%20on%2030",
+                "Image File Name": "13Goingon30_ec",
+                "Agency Credit": "Courtesy of Everett Collection, Inc.",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Gary Winick",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0935095/",
+                "Location Display Text": "W. 47th St. and Seventh Ave.<br>Times Square<br>Manhattan",
+                "LATITUDE": 40.7592204876521,
+                "LONGITUDE": -73.9846211671829,
+                "Borough": "Manhattan",
+                "Neighborhood": "Times Square",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://www.imdb.com/title/tt0337563/",
+                "Client or book location indicator": "47th St. and 7th Ave. Times Square\nManhattan",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 239,
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9696,
+                    40.7661
+                ]
+            },
+            "properties": {
+                "Film": "15 Minutes",
+                "Year": 2001,
+                "URL Encoded Name": "15%20Minutes",
+                "Image File Name": null,
+                "Agency Credit": null,
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "John Herzfeld",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0381273/",
+                "Location Display Text": "E. 60-66th St. and Madison Ave.<br>Upper East Side<br>Manhattan",
+                "LATITUDE": 40.7661,
+                "LONGITUDE": -73.9696,
+                "Borough": "Manhattan",
+                "Neighborhood": "Upper East Side",
+                "Scene Type": "Chases",
+                "Media": "Film",
+                "IMDB LINK": "http://www.imdb.com/title/tt0179626/",
+                "Client or book location indicator": "60-66th and Madison",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 82,
+                "Display?": "",
+                "IMAGE OF LOCATION": "N"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0123283863067,
+                    40.7117926273691
+                ]
+            },
+            "properties": {
+                "Film": "25th Hour",
+                "Year": 2002,
+                "URL Encoded Name": "25th%20Hour",
+                "Image File Name": "25thHour1_pf",
+                "Agency Credit": "Courtesy of Photofest",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Spike Lee",
+                "Director/Filmmaker IMDB Link": "http://www.imdb.com/name/nm0000490/",
+                "Location Display Text": "World Trade Center<br>Lower Manhattan",
+                "LATITUDE": 40.7117926273691,
+                "LONGITUDE": -74.0123283863067,
+                "Borough": "Manhattan",
+                "Neighborhood": "Lower Manhattan",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://www.imdb.com/title/tt0307901/",
+                "Client or book location indicator": "World Trade Center",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 93,
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9431273937225,
+                    40.775065592265
+                ]
+            },
+            "properties": {
+                "Film": "25th Hour",
+                "Year": 2002,
+                "URL Encoded Name": "25th%20Hour",
+                "Image File Name": "25thHour2_pf",
+                "Agency Credit": "Courtesy of Photofest",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Spike Lee",
+                "Director/Filmmaker IMDB Link": "http://www.imdb.com/name/nm0000490/",
+                "Location Display Text": "Carl Schurz Park<br>Upper East Side<br>Manhattan",
+                "LATITUDE": 40.775065592265,
+                "LONGITUDE": -73.9431273937225,
+                "Borough": "Manhattan",
+                "Neighborhood": "Upper East Side",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://www.imdb.com/title/tt0307901/",
+                "Client or book location indicator": "Carl Schurz Park btwn 84th and 85th and promenade",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 209,
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.95038009,
+                    40.74607025
+                ]
+            },
+            "properties": {
+                "Film": "A Perfect Murder",
+                "Year": 1998,
+                "URL Encoded Name": "A%20Perfect%20Murder",
+                "Image File Name": null,
+                "Agency Credit": null,
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Andrew Davis",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0001112/",
+                "Location Display Text": "Long Island City",
+                "LATITUDE": 40.74607025,
+                "LONGITUDE": -73.95038009,
+                "Borough": "Queens",
+                "Neighborhood": "Queens",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://www.imdb.com/title/tt0120787/",
+                "Client or book location indicator": "Long Island City",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": 141,
+                "Display?": "N",
+                "IMAGE OF LOCATION": "N"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0437960624694,
+                    40.6895873134383
+                ]
+            },
+            "properties": {
+                "Film": "A Thousand Clowns",
+                "Year": 1965,
+                "URL Encoded Name": "A%20Thousand%20Clowns",
+                "Image File Name": "AThousandClowns_pf",
+                "Agency Credit": "Courtesy of Photofest",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Fred Coe",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0168641/",
+                "Location Display Text": "Statue of Liberty<br>Liberty Island<br>New York Harbor",
+                "LATITUDE": 40.6895873134383,
+                "LONGITUDE": -74.0437960624694,
+                "Borough": "Manhattan",
+                "Neighborhood": "New York Harbor",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://www.imdb.com/title/tt0059798/",
+                "Client or book location indicator": "Statue of Liberty, Liberty Island, New York Harbor",
+                "Notes": "poor quality",
+                "Book Image": "Y",
+                "Book Page": 51,
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.038496017456,
+                    40.6989909067436
+                ]
+            },
+            "properties": {
+                "Film": "Across the Sea of Time",
+                "Year": 1997,
+                "URL Encoded Name": "Across%20the%20Sea%20of%20Time",
+                "Image File Name": "AcrossTheSeaOfTime_pf",
+                "Agency Credit": "Courtesy of Photofest",
+                "Artist Credit": "Directed by",
+                "Director/Filmmaker Name": "Stephen Low",
+                "Director/Filmmaker IMDB Link": "http://imdb.com/name/nm0522844/",
+                "Location Display Text": "New York Harbor",
+                "LATITUDE": 40.6989909067436,
+                "LONGITUDE": -74.038496017456,
+                "Borough": "Manhattan",
+                "Neighborhood": "New York Harbor",
+                "Scene Type": "N/A",
+                "Media": "Film",
+                "IMDB LINK": "http://imdb.com/title/tt0112286/",
+                "Client or book location indicator": "",
+                "Notes": "",
+                "Book Image": "Y",
+                "Book Page": "",
+                "Display?": "",
+                "IMAGE OF LOCATION": "Y"
+            }
+        }
+    ]
+}
