@@ -6,19 +6,20 @@ import { Component } from "../components/component"
 import { geoJSON } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/assets/scene_data.js';
 import { getData } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/scripts/movie'
 import { addToGallery } from "../index";
+import { GalleryTEST } from "../components/gallery"
 import { listCard } from '../components/list_card';
 
 export let imdbID = "tt0075686";
 
+export const gallery = new GalleryTEST();
 
-
-const makeMap = (long= -74.0079, lat= 40.7137) => {
+const makeMap = (long = -73.98015, lat = 40.782838) => {
     //create new map object, container grabs from div with id of map
     const generateMarkers = (lon, lat, str1, str2) => {
-        const marker = new mapboxgl.Marker({ color: "#000" })
+        const marker = new mapboxgl.Marker({ color: "#d80000" })
             .setLngLat([lon, lat])
             .setPopup(new mapboxgl.Popup().setHTML(`<h3 class="marker">${str1}</h1>
-              <h2 class="imdbID"><a href="${str2}">${str2}</a></h2>`)) // add popup
+              <h2>${str2}</h2>`)) // add popup
             .addTo(map);
 
     }
@@ -35,6 +36,12 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
 
         });
 
+    const coordinates = geoJSON.features[0].geometry.coordinates.slice()
+        
+    // coordinates.forEach(coord=>{
+    //     console.log(coord[1])
+    //     generateMarkers(coord[0], coord[1], "test", "test")
+    // });
 
         // add navigation controls
         map.addControl(new mapboxgl.NavigationControl());
@@ -48,6 +55,9 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
 
         map.on('load', () => {
             // Add an image to use as a custom marker
+            generateMarkers(long, lat, "You are here!", `Longitude: ${long}, Latitude: ${lat}`)
+
+   
             map.loadImage(
                 'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
                 (error, image) => {
@@ -67,7 +77,7 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
                         'layout': {
                             'icon-image': 'custom-marker',
                             // get the title name from the source's "title" property
-                            'text-field': ['get', "Film"],
+                            'text-field': ['get', ""],
                             'text-font': [
                                 'Open Sans Semibold',
                                 'Arial Unicode MS Bold'
@@ -79,7 +89,6 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
                 }
             );
         });
-
             
            
             
@@ -88,13 +97,25 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
         closeOnClick: false
     });
 
+    //MAP load event 
     map.on('mouseenter', 'points', (e) => {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
         // Copy coordinates array.
         const coordinates = e.features[0].geometry.coordinates.slice();
+        const title = e.features[0].properties["Film"];
+        const year = e.features[0].properties["Year"]
         const imdb = e.features[0].properties["IMDB LINK"];
+        const credit = e.features[0].properties["Artist Credit"];
+        const director = e.features[0].properties["Director/Filmmaker Name"];
+        const location = e.features[0].properties["Location Display Text"];
+        const neighborhood = e.features[0].properties["Location Display Text"];
+        const sceneType = e.features[0].properties["Scene Type"];
+
+
+        gallery.addJSON(e);
+
         imdbID = imdb.split("/")[4]
 
         getData(imdbID)
@@ -105,8 +126,12 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
                 return response.json(); // parses JSON response into native JavaScript objects
             })
             .then((data) => {
-                console.log(data)
-                addToGallery(data);
+                // console.log(data)
+
+                gallery.addRes(data);
+                addToGallery();
+                // console.log(gallery);
+                // console.log(addToGallery());
             })
             .catch((error) => {
                 console.error(
@@ -114,7 +139,7 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
                     error
                 );
             });
-
+            
         // const title = e.features[0].properties["Film"];
         // const year = e.features[0].properties["Year"];
         // const gallery = document.querySelector("#gallery");
@@ -132,7 +157,7 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML(imdb).addTo(map);
+        popup.setLngLat(coordinates).setHTML(title).addTo(map);
         // const gallery = new Component("h1", "this thing works!", document.body)
         //  gallery.create();
         
@@ -144,7 +169,7 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
         // div.remove();
         popup.remove();
     });
-
+}
         // scene_data.slice(1).forEach(film => {
         //     if (film["IMDB LINK"] !== null) { 
         //         let imdbID = film["IMDB LINK"];
@@ -153,10 +178,9 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
         //     };
         // })
 
-        generateMarkers(long, lat, "You are here!")
 
 
-};
+
 
 
 
@@ -182,4 +206,20 @@ const makeMap = (long= -74.0079, lat= 40.7137) => {
     
 
 
-// }
+ 
+
+// geoJSON.features.forEach(function (marker) {
+//     // create a HTML element for each feature
+//     var el = document.createElement('div');
+//     el.className = 'marker';
+
+
+
+// make a marker for each feature and add to the map
+// new mapboxgl.Marker(el)
+//     .setLngLat(marker.geometry.coordinates)
+//     .addTo(map)
+//     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+//         .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+//     .addTo(map);
+//         });

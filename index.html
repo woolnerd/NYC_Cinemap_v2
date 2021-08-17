@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/main.css">
+    
     <script src="./dist/main.js"></script>
     <title>NYC Cinemap</title>
 </head>
@@ -12,6 +13,10 @@
     <nav>
         <div class="left-nav">
             <h3 id="cur-loc">Current Location:</h3>
+            <form id="search-form" action="">
+                <input id="loc-input" type="text" placeholder="Enter a location" value="">
+                <button id="search-btn">Submit</button>
+            </form>
         </div>
         <div class="right-nav">
             <ul>
@@ -23,22 +28,28 @@
         </div>
     </nav>
     <main>
-        <h1>NYC CINEMAP</h1>
+        <h1 id="banner">NYC CINEMAP</h1>
         <ul class="neighborhood">
-            <li>Downtown</li>
-            <li>Midtown</li>
-            <li>Uptown</li>
-            <li>Bronx</li>
-            <li>Brooklyn</li>
+            <li id="downtown">Downtown</li>
+            <li id="midtown">Midtown</li>
+            <li id="uptown">Uptown</li>
+            <li id="bronx">Bronx</li>
+            <li id="queens">Queens</li>
+            <li id="brooklyn">Brooklyn</li>
         </ul>
+        
         <section class="main-container">
+            
             <div id="map"></div>
             <div id="gallery">
+                
                 <div class="card">
+                    
                     <img id="card-img" src="https://image.tmdb.org/t/p/w500//amwo4CjYKynZ2yKvKMxoiRSsaE1.jpg"
                         alt="" srcset="">
                 </div>
                 <div class="card">
+                    <h1 id="test">TEST</h1>
                     <h3 id="gallery-title" data-id="">Die Hard: with a vengeance</h3>
                     <p id="gallery-overview"></p>
                 </div>`
@@ -46,14 +57,8 @@
         </section>
     </main>
     <aside>
-        <div class="list-container">
-            <!-- <div class="list-movie">
-                <h3>Die Hard: with a vengeance</h3>
-                <img src="https://image.tmdb.org/t/p/w500//amwo4CjYKynZ2yKvKMxoiRSsaE1.jpg" alt="">
-            </div>
-            <div class="list-movie-2"></div>
-            <div class="list-movie"></div> -->
-        </div>
+        <h2>Add a movie to your watchlist!</h2>
+        <div class="list-container"></div>
     </aside>
 </body>
 </html>
