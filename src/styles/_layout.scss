@@ -9,23 +9,15 @@ body {
 
 #banner {
     text-align: center;
-    font-size: 5rem;
+    font-size: 7rem;
     margin: 50px;
     text-shadow: black 10px 0 30px;
     top: 0px;
     position: absolute;
-    margin-left: 600px;
+    margin-left: 500px;
     margin-top: 100px;
 }
 
-// .marker {
-//   background-image: url('mapbox-icon.png');
-//   background-size: cover;
-//   width: 50px;
-//   height: 50px;
-//   border-radius: 50%;
-//   cursor: pointer;
-// }
 
 #map {
     border: 1px solid black;
@@ -33,35 +25,11 @@ body {
     width: 600px;
     height: 400px;
     min-width: 400px;
+    filter: drop-shadow(30px 40px 20px #000);
 }
-
 
 
 .main-container {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card {
-    width: 200px;
-    height: 300px;
-    border: 1px solid black;
-    margin: 10px;
-    background: rgba(86, 86, 235, 0.108);
-    font-size: 1.5em;
-    padding: 10px;
-    text-align: center;
-}
-
-.card h1 {
-    font-size: 3rem;
-}
-
-#gallery {
-    width: 600px;
-    height: 400px;
-    border: 1px solid black;
-    margin: 50px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -70,6 +38,61 @@ body {
     width:100%;
     height: 100%;
 }
+
+.card {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    background: rgba(248, 248, 254, 0.108);
+    font-size: 1.5em;
+    padding: 10px;
+    text-align: center;
+
+    filter: drop-shadow(5px 5px 5px rgb(255, 255, 255));
+}
+
+#gallery:hover {
+    background-color: rgba(220, 220, 220, 0.865);
+}
+
+.card-info h2, h3, h4, h5, p {
+    padding: 4px;
+    text-align: right;
+}
+
+.card-info h2 {
+    font-size: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 30px;;
+}
+
+.card-info {
+    width: 300px;
+    border-left: 2px solid rgba(218, 213, 213, 0.762);
+}
+
+.main-container {
+    background-color: aliceblue;
+    // background-image: url("https://images.unsplash.com/photo-1578496746448-fe831c881a57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80");
+}
+
+
+
+#gallery {
+    background-color: rgba(255, 255, 255, 0.803);
+    width: 600px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    filter: drop-shadow(30px 40px 20px #000);
+    
+}
+
+
 
 .marker {
 //   background-image: url("./2079189.png");

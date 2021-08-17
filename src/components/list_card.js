@@ -18,11 +18,12 @@ const listCard = (obj) => {
     const listContainer = document.getElementsByClassName("list-container");
 
     const template = `    
-    <div class="list-movie">
-        <h3 id="list-title" data-id="${title.dataset}">${title.innerText}</h3>
+        <span data-id="${obj.data.movie_results[0].id}" id="destroy">X</span>
+        <h3 id="list-title" data-id="${obj.data.movie_results[0].id}">${obj.data.movie_results[0].title}</h3>
         <img id="list-img" src="${image.src}" alt="">
-        <p id="list-overview">${overview.innerText.slice(0,40)+"..."}</p>
-    </div>`
+        <p id="score">Score: ${obj.data.movie_results[0].vote_average}</p>
+        <p id="year">${obj.geoJSON.features[0].properties["Year"]}</p>
+        <a href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>`
     return template;
 }
 

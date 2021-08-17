@@ -1,3 +1,4 @@
+import { populateStorage, removeFromStorage } from "./scripts/utils";
 import { getData, movieData } from "./scripts/movie"
 import { makeMap } from "./scripts/map";
 import { Component } from "./components/component";
@@ -26,18 +27,24 @@ const addToGallery = () => {
  const brooklynCoords = [-73.965503, 40.677926]
 
 
-
 document.addEventListener("DOMContentLoaded", ()=> {
     //renders map with current location
     navigator.geolocation.getCurrentPosition(success, error, options)
 
+    const listContainer = document.getElementsByClassName("list-container");
+    // let div = localStorage.getItem("listItem")
+    // console.log(div[0]);
+    // listContainer.appendChild(div);
+
+
+
     //add movie from gallery to movie-list;
-    const gallery = document.getElementById("gallery");
-    gallery.addEventListener('click', addToMovieList)
+    const gal = document.getElementById("gallery");
+    gal.addEventListener('click', ()=>addToMovieList(gallery))
 
   
     //delete movie from list
-    const listContainer = document.getElementsByClassName("list-container");
+    // const listContainer = document.getElementsByClassName("list-container");
     listContainer[0].addEventListener('click', deleteMovieFromList);
 
 
@@ -74,30 +81,36 @@ document.addEventListener("DOMContentLoaded", ()=> {
 const deleteMovieFromList = (e) => {
     const listContainer = document.getElementsByClassName("list-container");
     // listContainer.removeChild(e.target);
-    if (e.target.parentNode.className === "list-movie") {
+
+    if (e.target.id === "destroy") {
         e.target.parentNode.remove();
     }
     console.log(e);
+    // console.log(id);
+    console.log(e.target.dataset.id)
+    removeFromStorage(e.target.dataset.id)
+    // console.log(e);
 }
 
 
 const addToMovieList = (galleryInstance) => {
-    console.log("here");
     const galleryTitle = document.getElementById("gallery-title");
     const movieList = document.querySelector(".list-container"); 
-    const mlNodeList = document.querySelectorAll(".list-movie");
+    const mlNodeList = document.querySelectorAll(".list-card");
     const listDiv = document.createElement("div")
-    listDiv.className = "test"
+
+    listDiv.className = "list-card"
     listDiv.innerHTML = listCard(galleryInstance);
     const array = Array.from(mlNodeList);
 
-    let inList = array.some(child => child.innerText.includes(galleryTitle.innerText));
+    let inList = array.some(child => child.children[1].dataset.id.includes(galleryTitle.dataset.id));
 
     if (inList) {
         console.log("in list")
     } else {
         console.log("not in list");
         movieList.appendChild(listDiv)
+        populateStorage(galleryTitle.dataset.id);
     }
 
 }
