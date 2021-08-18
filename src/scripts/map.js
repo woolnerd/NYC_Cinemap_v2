@@ -6,12 +6,12 @@ import { Component } from "../components/component"
 import { geoJSON } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/assets/scene_data.js';
 import { getData } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/scripts/movie'
 import { addToGallery } from "../index";
-import { GalleryTEST } from "../components/gallery"
+import { DataStore } from "../components/gallery"
 import { listCard } from '../components/list_card';
 
 export let imdbID = "tt0075686";
 
-export const gallery = new GalleryTEST();
+export const gallery = new DataStore();
 
 const makeMap = (long = -73.98015, lat = 40.782838) => {
     //create new map object, container grabs from div with id of map
@@ -42,6 +42,83 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     //     console.log(coord[1])
     //     generateMarkers(coord[0], coord[1], "test", "test")
     // });
+    map.on('load', () => {
+        // Add an image to use as a custom marker
+        generateMarkers(long, lat, "You are here!", `Longitude: ${long}, Latitude: ${lat}`)
+
+        geoJSON.features.forEach(function (marker) {
+        // create a HTML element for each feature
+            const el = document.createElement('div');
+            // console.log(marker)
+
+            let title = marker.properties["Film"];
+            let imdb = marker.properties["IMDB LINK"];
+            let year = marker.properties["Year"];
+            let location = marker.properties["Location Display Text"];
+            let sceneType = marker.properties["Scene Type"]
+            let creator = marker.properties["Artist Credit"];
+            let director = marker.properties["Director/Filmmaker Name"];
+
+            el.dataset.year = year;
+            el.dataset.location = location;
+            el.dataset.sceneType = sceneType;
+            el.dataset.creator = creator;
+            el.dataset.director = director;
+            el.dataset.imdb = imdb.split("/")[4]
+            el.className = 'marker';
+
+            new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            // .addTo(map)
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML('<h3>' + title + '</h3>'))
+            .addTo(map);
+        })
+
+        const markers = document.querySelectorAll(".marker");
+        markers.forEach(marker=> {
+            marker.addEventListener('mouseenter', (e) => {
+                
+                //instead of refactoring addToGallery interpolation...
+                const fakeJSON = {
+                    features: [ {
+                        "properties": {
+                            "Year": e.target.dataset.year,
+                            "Location Display Text": e.target.dataset.location,
+                            "Scene Type": e.target.dataset.sceneType,
+                            "Artist Credit": e.target.dataset.creator,
+                            "Director/Filmmaker Name": e.target.dataset.director
+                        }
+
+                    }
+ 
+                    ]
+                }
+                gallery.addJSON(fakeJSON);
+                // console.log(e);
+                getData(e.target.dataset.imdb)
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Error with network response");
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        gallery.addRes(data);
+                        addToGallery();
+
+                    })
+                    .catch((error) => {
+                        console.error(
+                            "Problem intercepted: ",
+                            error
+                        );
+                    });
+
+
+
+            })
+        })
 
         // add navigation controls
         map.addControl(new mapboxgl.NavigationControl());
@@ -53,42 +130,46 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
             showUserHeading: true
         }));
 
-        map.on('load', () => {
-            // Add an image to use as a custom marker
-            generateMarkers(long, lat, "You are here!", `Longitude: ${long}, Latitude: ${lat}`)
 
-   
-            map.loadImage(
-                'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
-                (error, image) => {
-                    if (error) throw error;
-                    map.addImage('custom-marker', image);
-                    // Add a GeoJSON source with 2 points
-                    map.addSource('points', {
-                        'type': 'geojson',
-                        'data': geoJSON
-                    });
+            // make a marker for each feature and add to the map
 
-                    // Add a symbol layer
-                    map.addLayer({
-                        'id': 'points',
-                        'type': 'symbol',
-                        'source': 'points',
-                        'layout': {
-                            'icon-image': 'custom-marker',
-                            // get the title name from the source's "title" property
-                            'text-field': ['get', ""],
-                            'text-font': [
-                                'Open Sans Semibold',
-                                'Arial Unicode MS Bold'
-                            ],
-                            'text-offset': [0, 1.25],
-                            'text-anchor': 'top'
-                        }
-                    });
-                }
-            );
         });
+
+
+        //     map.loadImage(
+        //         'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
+        //         (error, image) => {
+        //             if (error) throw error;
+        //             map.addImage('custom-marker', image);
+        //             // Add a GeoJSON source with 2 points
+        //             map.addSource('points', {
+        //                 'type': 'geojson',
+        //                 'data': geoJSON
+        //             });
+
+        //             // Add a symbol layer
+        //             map.addLayer({
+        //                 'id': 'points',
+        //                 'type': 'symbol',
+        //                 'source': 'points',
+        //                 'layout': {
+        //                     'icon-image': 'custom-marker'
+        //                     // get the title name from the source's "title" property
+        //                     // 'text-field': ['get', ""],
+        //                     // 'text-font': [
+        //                     //     'Open Sans Semibold',
+        //                     //     'Arial Unicode MS Bold'
+        //                     // ],
+        //                     // 'text-offset': [0, 1.25],
+        //                     // 'text-anchor': 'top'
+        //                     // 'icon-color': '#000'
+
+        //                     // ["rgb", number, number, number]: color
+        //                 }
+        //             });
+        //         }
+        //     );
+        // });
             
            
             
@@ -105,15 +186,15 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
         // Copy coordinates array.
         const coordinates = e.features[0].geometry.coordinates.slice();
         const title = e.features[0].properties["Film"];
-        const year = e.features[0].properties["Year"]
+        // const year = e.features[0].properties["Year"]
         const imdb = e.features[0].properties["IMDB LINK"];
-        const credit = e.features[0].properties["Artist Credit"];
-        const director = e.features[0].properties["Director/Filmmaker Name"];
-        const location = e.features[0].properties["Location Display Text"];
-        const neighborhood = e.features[0].properties["Location Display Text"];
-        const sceneType = e.features[0].properties["Scene Type"];
+        // const credit = e.features[0].properties["Artist Credit"];
+        // const director = e.features[0].properties["Director/Filmmaker Name"];
+        // const location = e.features[0].properties["Location Display Text"];
+        // const neighborhood = e.features[0].properties["Location Display Text"];
+        // const sceneType = e.features[0].properties["Scene Type"];
 
-
+        //add the data from the geoJSON Mayor's office data here
         gallery.addJSON(e);
 
         imdbID = imdb.split("/")[4]
@@ -121,17 +202,14 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
         getData(imdbID)
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error("Network response was not ok");
+                    throw new Error("Error with network response");
                 }
-                return response.json(); // parses JSON response into native JavaScript objects
+                return response.json(); 
             })
             .then((data) => {
-                // console.log(data)
-
                 gallery.addRes(data);
                 addToGallery();
-                // console.log(gallery);
-                // console.log(addToGallery());
+
             })
             .catch((error) => {
                 console.error(
@@ -216,7 +294,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
 
 
 // make a marker for each feature and add to the map
-// new mapboxgl.Marker(el)
+// new mapboxgl(el)
 //     .setLngLat(marker.geometry.coordinates)
 //     .addTo(map)
 //     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups

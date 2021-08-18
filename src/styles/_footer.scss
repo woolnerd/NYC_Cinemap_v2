@@ -1,0 +1,25 @@
+$one: #d90429; 
+$two: #ef233c;
+$three: #edf2f4;
+$four: #8d99ae;
+$five: #2b2d42;
+
+
+
+
+.foot-info {
+    font-size: 18px;
+    text-align: center;
+    padding: 200px;
+}
+
+footer {
+    background-color: $five;
+}
+
+.cushion {
+    width: auto;
+    height: 400px;
+    background-color: $four;
+    box-shadow: 0 0 5px 10px $four;
+}

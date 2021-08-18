@@ -16,10 +16,10 @@ async function getLocation(address) {
 //search for location from input
 function locationSearch(e) {
     e.preventDefault();
-    const locInput = document.querySelector("#loc-input")
+    const locInput = document.querySelector(".loc-input")
     const address = locInput.value;
 
-    const curLoc = document.getElementById("cur-loc");
+    const curLoc = document.querySelector(".cur-loc");
     curLoc.innerHTML = `Curent Location: ${address}`
 
     locInput.value = "";
@@ -33,9 +33,9 @@ function locationSearch(e) {
         })
         .then((data) => {
             const coords = data.features[0].geometry.coordinates;
-            console.log(coords)
+            // console.log(coords)
             makeMap(coords[0], coords[1]);
-            const curLoc = document.getElementById("cur-loc");
+            const curLoc = document.querySelector(".cur-loc");
             curLoc.innerHTML = `Curent Location: ${address}`
         })
         .catch((error) => {

@@ -1,8 +1,8 @@
 export { populateStorage, removeFromStorage, fetchPopulateList, newDataStore };
-import { GalleryTEST } from "../components/gallery";
+import { DataStore } from "../components/gallery";
 import { listCard, listCardFetch } from "../components/list_card"
 
-const newDataStore = new GalleryTEST();
+const newDataStore = new DataStore();
 
 
 
@@ -34,11 +34,10 @@ function removeFromStorage(id) {
 
 
 //fetch movie data
-function fetchPopulateList(fetchCB, dataStore) {
+function fetchPopulateList(fetchCB, DataStore) {
     if (localStorage.getItem("listItems")) {
         let items = localStorage.getItem("listItems");
         const arr = JSON.parse(items);
-        console.log(arr);
         arr.forEach(id=>{
    
             fetchCB(id)  
@@ -50,7 +49,7 @@ function fetchPopulateList(fetchCB, dataStore) {
                 })
                 .then((data) => {
         
-                    dataStore.addRes(data);
+                    DataStore.addRes(data);
                     return data;
                 }).then((data) => {
     

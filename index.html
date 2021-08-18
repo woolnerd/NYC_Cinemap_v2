@@ -13,9 +13,9 @@
     <nav>
         <div class="left-nav">
             <h3 id="cur-loc">Current Location:</h3>
-            <form id="search-form" action="">
-                <input id="loc-input" type="text" placeholder="Enter a location" value="">
-                <button id="search-btn">Submit</button>
+            <form class="search-form" action="">
+                <input class="loc-input" type="text" placeholder="Enter a location" value="">
+                <button class="search-btn">Submit</button>
             </form>
         </div>
         <div class="right-nav">
@@ -28,6 +28,19 @@
         </div>
     </nav>
     <main>
+        <div class="modal hidden">
+            <div class="modal-content hidden">
+                <form class="search-form" action="">
+                    <input class="loc-input" type="text" placeholder="Enter a location" value="">
+                    <button id="#search-btn">Submit</button>
+                </form>
+                <label for="">
+                    <button class="cur-loc-btn">Current Location!</button>
+                </label>
+                <span class="close">x</span>
+                <p>Enter a NYC address or Click to use current location!</p>
+            </div>
+        </div>
         <h1 id="banner">NYC CINEMAP</h1>
         <ul class="neighborhood">
             <li id="downtown">Downtown</li>
@@ -43,7 +56,7 @@
             <div id="map"></div>
                 <div id="gallery">
                     <div class="card">
-                        <h1>Coming Soon!</h1>
+                        <h1>NYC CINEMAP</h1>
                         <!-- <img id="card-img" src="https://image.tmdb.org/t/p/w500//GgZ2CQmo4hjVPNKAlxhruPN3HO.jpg" alt="" srcset=""> -->
                     </div>
                     <div class="card-info">
@@ -64,6 +77,14 @@
         <h2>Add a movie to your watchlist!</h2>
         <div class="list-container"></div>
     </aside>
+    <section>
+        <div class="cushion"></div>
+    </section>
+    <footer>
+        <div class="foot-info">
+            &copy; 2021 Noir Network Solutions Inc.
+        </div>
+    </footer>
 </body>
 </html>
 

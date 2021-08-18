@@ -1,3 +1,6 @@
+
+
+import { modalAppear } from "./scripts/js_fun";
 import { populateStorage, removeFromStorage, fetchPopulateList, newDataStore } from "./scripts/utils";
 import { getListData, movieData } from "./scripts/movie"
 import { makeMap } from "./scripts/map";
@@ -8,9 +11,9 @@ import { listCard } from "./components/list_card"
 // import * as boroughs from "./scripts/boroughs";
 export { addToGallery }
 import styles from "./index.scss"
-import { GalleryTEST } from "./components/gallery";
+import { DataStore } from "./components/gallery";
 
-const dataStore = new GalleryTEST();
+const dataStore = new DataStore();
 
 const addToGallery = () => {
     document.getElementById('gallery').innerHTML = gallery.createTemplate();
@@ -28,7 +31,7 @@ const listContainer = document.getElementsByClassName("list-container");
 
 
 //attempt to add templates(became objects of data response)
-// setTimeout(() => buildList(dataStore.templates), 500);
+// setTimeout(() => buildList(DataStore.templates), 500);
 
 // function buildList(templates) {
 //     console.log(templates)
@@ -40,26 +43,33 @@ const listContainer = document.getElementsByClassName("list-container");
 
 
 document.addEventListener("DOMContentLoaded", ()=> {
+    // setTimeout(()=>modalAppear(), 2000);
+
+    // const button = document.querySelector('#search-btn');
+    // button.addEventListener('click', ()=>console.log("good"))
+
+
+    //fetches imdb numbers from local storage to populate list;
+    fetchPopulateList(getListData, dataStore);
+
+
 
     //renders map with current location
-    fetchPopulateList(getListData, dataStore);
-    // addToGallery();
-
     navigator.geolocation.getCurrentPosition(success, error, options)
 
-    
+
+
     //add movie from gallery to movie-list;
     const gal = document.getElementById("gallery");
     gal.addEventListener('click', ()=>addToMovieList(gallery))
 
   
     //delete movie from list
-    // const listContainer = document.getElementsByClassName("list-container");
     listContainer[0].addEventListener('click', deleteMovieFromList);
 
 
 
-    const searchForm = document.querySelector("#search-form");
+    const searchForm = document.querySelector(".search-form");
     searchForm.addEventListener("submit", locationSearch);
 
    const nav = document.getElementsByTagName("nav");

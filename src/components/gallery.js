@@ -1,4 +1,4 @@
-export { GalleryTEST }
+export { DataStore }
 
 
 
@@ -26,23 +26,31 @@ export { GalleryTEST }
 //         </div>`
 //     return template
 // }
-window.GalleryTEST = GalleryTEST;
+window.DataStore = DataStore;
 
-function GalleryTEST() {
+function DataStore() {
     this.templates = [];
 }
 
-GalleryTEST.prototype.addRes = function(data){
+DataStore.prototype.addRes = function(data){
     this.data = data;
 }
 
-GalleryTEST.prototype.addJSON = function(geoJSON) {
+DataStore.prototype.addJSON = function(geoJSON) {
     this.geoJSON = geoJSON;
 }
 
 
-GalleryTEST.prototype.createTemplate = function() {
-    // console.log(this.data);
+DataStore.prototype.createTemplate = function() {
+    // console.log(this.geoJSON);
+    let scene = this.geoJSON.features[0].properties["Scene Type"];
+
+    if (scene === 'N/A') {
+        scene = "";
+    } else {
+        scene = `Scene type: ${scene}` 
+    }
+
     const template = 
                 `<div class="card">
                     <img id="card-img" src="https://image.tmdb.org/t/p/w500/${this.data.movie_results[0].poster_path}"
@@ -53,16 +61,18 @@ GalleryTEST.prototype.createTemplate = function() {
                     <h3 id="year">${this.geoJSON.features[0].properties["Year"]}</h3>
                     <h4 id="director">${this.geoJSON.features[0].properties["Artist Credit"]} ${this.geoJSON.features[0].properties["Director/Filmmaker Name"]}</h4>
                     <h5 id="score">Score: ${this.data.movie_results[0].vote_average}</h5>
+                    <br>
                     <p id="gallery-overview">${this.data.movie_results[0].overview.slice(0, 100) + "..."}</p>
+                    <br>
                     <p id="location">${this.geoJSON.features[0].properties["Location Display Text"]}</p>
-                    <p id="scene-type">${this.geoJSON.features[0].properties["Scene Type"]}</p>
+                    <p id="scene-type">${scene}</p>
                 </div>`
     return template;
 }
 
 
 
-// const g = new GalleryTEST();
+// const g = new DataStore();
 
 // console.log(g);
 
