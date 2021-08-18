@@ -42,7 +42,7 @@ const listContainer = document.getElementsByClassName("list-container");
 document.addEventListener("DOMContentLoaded", ()=> {
 
     //renders map with current location
-    // fetchPopulateList(getListData, dataStore);
+    fetchPopulateList(getListData, dataStore);
     // addToGallery();
 
     navigator.geolocation.getCurrentPosition(success, error, options)

@@ -1,6 +1,6 @@
 export { populateStorage, removeFromStorage, fetchPopulateList, newDataStore };
 import { GalleryTEST } from "../components/gallery";
-import { listCard } from "../components/list_card"
+import { listCard, listCardFetch } from "../components/list_card"
 
 const newDataStore = new GalleryTEST();
 
@@ -39,6 +39,7 @@ function fetchPopulateList(fetchCB, dataStore) {
         let items = localStorage.getItem("listItems");
         const arr = JSON.parse(items);
         arr.forEach(id=>{
+   
             fetchCB(id)  
             .then((response) => {
                     if (!response.ok) {
@@ -52,6 +53,19 @@ function fetchPopulateList(fetchCB, dataStore) {
                     dataStore.templates.push(data);
                     // const card = listCard(dataStore)
                     // newDataStore.templates.push(data);
+                }).then(() => {
+                    dataStore.templates.forEach(template => {
+                        const list = document.querySelector(".list-container");
+                        const div = document.createElement("div");
+                        div.className = "list-card";
+               
+                        let newTemplate = listCardFetch(template)
+                        div.innerHTML = newTemplate;
+            
+                        list.appendChild(div);
+                        })
+                
+
                 })
                 .catch((error) => {
                     console.error(
@@ -59,7 +73,9 @@ function fetchPopulateList(fetchCB, dataStore) {
                         error
                     );
                 });
+                
         })
+
     }
 }
 
