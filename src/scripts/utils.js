@@ -38,6 +38,7 @@ function fetchPopulateList(fetchCB, dataStore) {
     if (localStorage.getItem("listItems")) {
         let items = localStorage.getItem("listItems");
         const arr = JSON.parse(items);
+        console.log(arr);
         arr.forEach(id=>{
    
             fetchCB(id)  
@@ -48,24 +49,20 @@ function fetchPopulateList(fetchCB, dataStore) {
                     return response.json(); // parses JSON response into native JavaScript objects
                 })
                 .then((data) => {
-                    // console.log(data);
+        
                     dataStore.addRes(data);
-                    dataStore.templates.push(data);
-                    // const card = listCard(dataStore)
-                    // newDataStore.templates.push(data);
-                }).then(() => {
-                    dataStore.templates.forEach(template => {
+                    return data;
+                }).then((data) => {
+    
                         const list = document.querySelector(".list-container");
                         const div = document.createElement("div");
                         div.className = "list-card";
-               
-                        let newTemplate = listCardFetch(template)
+        
+                        let newTemplate = listCardFetch(data)
                         div.innerHTML = newTemplate;
             
                         list.appendChild(div);
-                        })
-                
-
+            
                 })
                 .catch((error) => {
                     console.error(
