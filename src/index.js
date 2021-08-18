@@ -1,22 +1,19 @@
-import { populateStorage, removeFromStorage } from "./scripts/utils";
-import { getData, movieData } from "./scripts/movie"
+import { populateStorage, removeFromStorage, fetchPopulateList, newDataStore } from "./scripts/utils";
+import { getListData, movieData } from "./scripts/movie"
 import { makeMap } from "./scripts/map";
 import { Component } from "./components/component";
-// import { Gallery } from "./components/gallery";
 import { gallery } from "./scripts/map";
 import { getLocation, locationSearch } from "./scripts/location";
 import { listCard } from "./components/list_card"
 // import * as boroughs from "./scripts/boroughs";
 export { addToGallery }
 import styles from "./index.scss"
+import { GalleryTEST } from "./components/gallery";
 
-// const addToGallery = (data) => {
+const dataStore = new GalleryTEST();
 
 const addToGallery = () => {
-    // document.getElementById('gallery').innerHTML = Gallery(data);
     document.getElementById('gallery').innerHTML = gallery.createTemplate();
-    // console.log(gallery.createTemplate());
-    // console.log(gallery);
 }
 
  const downtownCoords = [-73.995718, 40.721572];
@@ -27,17 +24,30 @@ const addToGallery = () => {
  const brooklynCoords = [-73.965503, 40.677926]
 
 
+const listContainer = document.getElementsByClassName("list-container");
+
+
+//attempt to add templates(became objects of data response)
+// setTimeout(() => buildList(dataStore.templates), 500);
+
+// function buildList(templates) {
+//     console.log(templates)
+//     templates.forEach(template => {
+
+//     })
+
+// }
+
+
 document.addEventListener("DOMContentLoaded", ()=> {
+
     //renders map with current location
+    // fetchPopulateList(getListData, dataStore);
+    // addToGallery();
+
     navigator.geolocation.getCurrentPosition(success, error, options)
 
-    const listContainer = document.getElementsByClassName("list-container");
-    // let div = localStorage.getItem("listItem")
-    // console.log(div[0]);
-    // listContainer.appendChild(div);
-
-
-
+    
     //add movie from gallery to movie-list;
     const gal = document.getElementById("gallery");
     gal.addEventListener('click', ()=>addToMovieList(gallery))
@@ -79,17 +89,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 
 const deleteMovieFromList = (e) => {
-    const listContainer = document.getElementsByClassName("list-container");
-    // listContainer.removeChild(e.target);
-
     if (e.target.id === "destroy") {
         e.target.parentNode.remove();
     }
-    console.log(e);
-    // console.log(id);
-    console.log(e.target.dataset.id)
     removeFromStorage(e.target.dataset.id)
-    // console.log(e);
 }
 
 

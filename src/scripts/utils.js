@@ -1,5 +1,11 @@
-export { populateStorage, removeFromStorage };
-//
+export { populateStorage, removeFromStorage, fetchPopulateList, newDataStore };
+import { GalleryTEST } from "../components/gallery";
+import { listCard } from "../components/list_card"
+
+const newDataStore = new GalleryTEST();
+
+
+
 function populateStorage(listItem) {
     if (!localStorage.getItem("listItems")) {
         const item = JSON.stringify([listItem]);
@@ -28,7 +34,7 @@ function removeFromStorage(id) {
 
 
 //fetch movie data
-function fetchPopulateList(fetchCB, templateCB) {
+function fetchPopulateList(fetchCB, dataStore) {
     if (localStorage.getItem("listItems")) {
         let items = localStorage.getItem("listItems");
         const arr = JSON.parse(items);
@@ -41,7 +47,11 @@ function fetchPopulateList(fetchCB, templateCB) {
                     return response.json(); // parses JSON response into native JavaScript objects
                 })
                 .then((data) => {
-                    templateCB();
+                    // console.log(data);
+                    dataStore.addRes(data);
+                    dataStore.templates.push(data);
+                    // const card = listCard(dataStore)
+                    // newDataStore.templates.push(data);
                 })
                 .catch((error) => {
                     console.error(
@@ -59,6 +69,3 @@ function fetchPopulateList(fetchCB, templateCB) {
 
 
 
-
-
-//build card

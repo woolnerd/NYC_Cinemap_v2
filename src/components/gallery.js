@@ -29,7 +29,7 @@ export { GalleryTEST }
 window.GalleryTEST = GalleryTEST;
 
 function GalleryTEST() {
-
+    this.templates = [];
 }
 
 GalleryTEST.prototype.addRes = function(data){
@@ -40,8 +40,9 @@ GalleryTEST.prototype.addJSON = function(geoJSON) {
     this.geoJSON = geoJSON;
 }
 
+
 GalleryTEST.prototype.createTemplate = function() {
-    console.log(this.data);
+    // console.log(this.data);
     const template = 
                 `<div class="card">
                     <img id="card-img" src="https://image.tmdb.org/t/p/w500/${this.data.movie_results[0].poster_path}"
