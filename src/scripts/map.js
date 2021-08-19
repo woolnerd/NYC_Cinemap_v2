@@ -51,7 +51,8 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
             const el = document.createElement('div');
             // console.log(marker)
 
-            let title = marker.properties["Film"];
+            //here we add the properties from our geoJSON dataset to the coordinates/markers
+            let film = marker.properties["Film"];
             let imdb = marker.properties["IMDB LINK"];
             let year = marker.properties["Year"];
             let location = marker.properties["Location Display Text"];
@@ -65,13 +66,15 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
             el.dataset.creator = creator;
             el.dataset.director = director;
             el.dataset.imdb = imdb.split("/")[4]
+            el.dataset.imdbFull = imdb;
+            el.dataset.film = film;
             el.className = 'marker';
 
             new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
             // .addTo(map)
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML('<h3 class="pop-up-title">' + title + '</h3>'))
+                .setHTML('<h3 class="pop-up-title">' + film + '</h3>'))
             .addTo(map);
         })
 
@@ -87,7 +90,9 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
                             "Location Display Text": e.target.dataset.location,
                             "Scene Type": e.target.dataset.sceneType,
                             "Artist Credit": e.target.dataset.creator,
-                            "Director/Filmmaker Name": e.target.dataset.director
+                            "Director/Filmmaker Name": e.target.dataset.director,
+                            "IMDB LINK": e.target.dataset.imdbFull,
+                            "Film": e.target.dataset.film
                         }
 
                     }

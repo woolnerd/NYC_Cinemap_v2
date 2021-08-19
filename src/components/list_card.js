@@ -1,12 +1,6 @@
 import { Component } from "./component";
 export { listCard, listCardFetch}
 
-// function listCard(data) { 
-//     const cache = data;
-//     return function() {
-//         return cache;
-//     }
-// }
 function parseForSearch(title) {
     const abc = "abcdefghijklmnopqrstuvwxyz";
     if (title !== undefined){ 
@@ -23,15 +17,14 @@ function parseForSearch(title) {
 }
 
 const listCard = (obj) => {
-    // const gallery = document.getElementById("gallery");
-    // console.log(obj.data.id)
+    console.log(obj);
 
     const image = document.getElementById("card-img");
-    const title = document.getElementById("gallery-title");
-    const overview = document.getElementById("gallery-overview");
-    const listContainer = document.getElementsByClassName("list-container");
+    // const title = document.getElementById("gallery-title");
+    // const overview = document.getElementById("gallery-overview");
+    // const listContainer = document.getElementsByClassName("list-container");
 
-    const justWatchTitle = parseForSearch(obj.geoJSON.features[0].properties["IMDB LINK"]);
+    const justWatchTitle = parseForSearch(obj.geoJSON.features[0].properties["Film"]);
     const template =`
         <span data-id="${obj.data.movie_results[0].id}" id="destroy">X</span>
         <h3 id="list-title" data-id="${obj.data.movie_results[0].id}">${obj.data.movie_results[0].title}</h3>
@@ -61,7 +54,3 @@ const listCardFetch = (template) => {
 
 
 
-        // < span data-id="${obj.id}" id = "destroy" > X</span >
-        // <h3 id="list-title" data-id="${obj.id}">${obj.title}</h3>
-        // <img id="list-img" src="${image.src}" alt="">
-        // <p id="score">Score: ${obj.vote_average}</p>`
