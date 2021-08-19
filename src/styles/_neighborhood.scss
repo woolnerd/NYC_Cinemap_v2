@@ -11,6 +11,8 @@
 
 .neighborhood li:hover {
     color: $one;
+    transition: all .3s ease;
+
 }
 
 .neighborhood li {

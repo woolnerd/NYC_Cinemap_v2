@@ -9,7 +9,6 @@
 
 
 .marker {
-  // background-image: url('/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/styles/2079189.png');
   background-color: #8d99ae;
   background-size: cover;
   width: 30px;
@@ -17,8 +16,6 @@
   border-radius: 50%;
   border: 1px solid #2b2d42;;
   cursor: pointer;
-//   filter: drop-shadow(30px 40px 20px #000);
-//  transition: width 4s 1s;
 }
 .marker-info {
   font-size: 20px;
@@ -36,8 +33,6 @@
 
 .marker:hover {
   background-color: #ef233c;;
-//   transform: rotate(1800deg);
-//   transform: translateX(180px) rotate(45deg);
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -52,6 +47,3 @@
   color: #2b2d42;
   background-color: #edf2f4;
 }
-// .marker mapboxgl-marker mapboxgl-marker-anchor-center {
-//     background-image: url(src/styles/2079189.png);
-// }

@@ -5,12 +5,13 @@ ul {
     text-transform: lowercase;
 }
 
-a {
+nav a {
     color: $five;
+    transition: all .3s ease;
 
 }
 
-a:hover {
+nav a:hover {
     color: $three;
 }
 

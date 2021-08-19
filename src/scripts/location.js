@@ -20,7 +20,7 @@ function locationSearch(e) {
     const address = locInput.value;
 
     const curLoc = document.querySelector("#cur-loc");
-    curLoc.innerHTML = `Curent Location: ${address}`
+    curLoc.innerHTML = `Search Location:  ${address}`
 
     locInput.value = "";
 
@@ -36,7 +36,7 @@ function locationSearch(e) {
             // console.log(coords)
             makeMap(coords[0], coords[1]);
             const curLoc = document.querySelector("#cur-loc");
-            curLoc.innerHTML = `Curent Location: ${address}`
+            curLoc.innerHTML = `Search Location: ${address}`
         })
         .catch((error) => {
             console.error(

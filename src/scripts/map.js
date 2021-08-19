@@ -44,7 +44,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     // });
     map.on('load', () => {
         // Add an image to use as a custom marker
-        generateMarkers(long, lat, "You are here!", `Longitude: ${long}, Latitude: ${lat}`)
+        generateMarkers(long, lat, "You are here!", `7 films were shot within 10 blocks of you!`)
 
         geoJSON.features.forEach(function (marker) {
         // create a HTML element for each feature
