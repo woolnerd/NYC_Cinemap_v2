@@ -18,8 +18,8 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     const generateMarkers = (lon, lat, str1, str2) => {
         const marker = new mapboxgl.Marker({ color: "#d80000" })
             .setLngLat([lon, lat])
-            .setPopup(new mapboxgl.Popup().setHTML(`<h3 class="marker">${str1}</h1>
-              <h2>${str2}</h2>`)) // add popup
+            .setPopup(new mapboxgl.Popup().setHTML(`<h3 class="marker-info">${str1}</h1>
+              <h2 class="marker-lon-lat">${str2}</h2>`)) // add popup
             .addTo(map);
 
     }
@@ -71,7 +71,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
             .setLngLat(marker.geometry.coordinates)
             // .addTo(map)
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML('<h3>' + title + '</h3>'))
+                .setHTML('<h3 class="pop-up-title">' + title + '</h3>'))
             .addTo(map);
         })
 

@@ -23,7 +23,7 @@ const listCard = (obj) => {
         <p id="score">Score: ${obj.data.movie_results[0].vote_average}</p>
 
         <p id="year">${obj.geoJSON.features[0].properties["Year"]}</p>
-        <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]} target="_blank">IMDB Link</a>`
+        <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>`
     return template;
 }
 
@@ -35,7 +35,7 @@ const listCardFetch = (template) => {
                             <p id="score">Score: ${template.vote_average}</p>
 
                             <p id="year">${template.release_date.slice(0, 4)}</p>
-                            <a id="imdb-link" href="htttp://www.imdb.com/title/${template.imdb_id} target="_blank">IMDB Link</a>`
+                            <a id="imdb-link" href="http://www.imdb.com/title/${template.imdb_id}" target="_blank">IMDB Link</a>`
         return newTemplate
                 }
 

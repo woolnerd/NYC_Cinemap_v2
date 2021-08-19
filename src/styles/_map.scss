@@ -9,8 +9,8 @@
 
 
 .marker {
-//   background-image: url('/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/styles/2079189.png');
-  background-color: #edf2f4;
+  // background-image: url('/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/styles/2079189.png');
+  background-color: #8d99ae;
   background-size: cover;
   width: 30px;
   height: 30px;
@@ -20,8 +20,19 @@
 //   filter: drop-shadow(30px 40px 20px #000);
 //  transition: width 4s 1s;
 }
+.marker-info {
+  font-size: 20px;
+  text-align: center;
+  background-color: #8d99ae;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  // background-image: url('/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/styles/2079189.png');
+}
 
-
+.marker-long-lat {
+  font-size: 15px;
+}
 
 .marker:hover {
   background-color: #ef233c;;
@@ -34,6 +45,13 @@
   cursor: pointer;
 }
 
+
+.pop-up-title {
+  text-align: center;
+  font-size: 24px;
+  color: #2b2d42;
+  background-color: #edf2f4;
+}
 // .marker mapboxgl-marker mapboxgl-marker-anchor-center {
 //     background-image: url(src/styles/2079189.png);
 // }
