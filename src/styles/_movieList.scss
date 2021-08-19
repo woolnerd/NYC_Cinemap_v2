@@ -12,10 +12,14 @@ aside {
 #imdb-link {
     font-size: 25px;
     color: $one;
+    padding: 5px;
 }
 
 #imdb-link:hover {
     color: $five;
+    background: $one;
+    border: 1px solid $three;
+    border-radius: 10px;;
 }
 
 a {
@@ -79,6 +83,7 @@ a {
     border-radius: 10px 10px 5px 5px;
     border-right: 3px solid $five;
     border-bottom: 3px solid $five;
+    opacity: 100%;
 }
 
 .list-card h3 {
@@ -105,3 +110,19 @@ a {
     display: none;
 }
 
+#just-watch-link{
+    padding: 5px;
+    padding-left: 20px;
+}
+
+#just-watch-link:hover {
+    background: $one;
+    border: 1px solid $three;
+    border-radius: 10px;;
+}
+
+#list-title {
+    background: $two;
+    border: 1px solid $three;
+    border-radius: 10px;;
+}

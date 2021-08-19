@@ -128,10 +128,14 @@ aside {
 #imdb-link {
   font-size: 25px;
   color: #d90429;
+  padding: 5px;
 }
 
 #imdb-link:hover {
   color: #2b2d42;
+  background: #d90429;
+  border: 1px solid #edf2f4;
+  border-radius: 10px;
 }
 
 a {
@@ -194,6 +198,7 @@ a {
   border-radius: 10px 10px 5px 5px;
   border-right: 3px solid #2b2d42;
   border-bottom: 3px solid #2b2d42;
+  opacity: 100%;
 }
 
 .list-card h3 {
@@ -218,6 +223,23 @@ a {
 
 .hide {
   display: none;
+}
+
+#just-watch-link {
+  padding: 5px;
+  padding-left: 20px;
+}
+
+#just-watch-link:hover {
+  background: #d90429;
+  border: 1px solid #edf2f4;
+  border-radius: 10px;
+}
+
+#list-title {
+  background: #ef233c;
+  border: 1px solid #edf2f4;
+  border-radius: 10px;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

@@ -7,6 +7,12 @@ export { listCard, listCardFetch}
 //         return cache;
 //     }
 // }
+function parseForSearch(title) {
+    if (title !== undefined){ 
+        title = title.toLowerCase().split(" ").join("-");
+    }
+    return title;
+}
 
 const listCard = (obj) => {
     // const gallery = document.getElementById("gallery");
@@ -16,6 +22,8 @@ const listCard = (obj) => {
     const title = document.getElementById("gallery-title");
     const overview = document.getElementById("gallery-overview");
     const listContainer = document.getElementsByClassName("list-container");
+
+    const justWatchTitle = parseForSearch(obj.geoJSON.features[0].properties["IMDB LINK"]);
     const template =`
         <span data-id="${obj.data.movie_results[0].id}" id="destroy">X</span>
         <h3 id="list-title" data-id="${obj.data.movie_results[0].id}">${obj.data.movie_results[0].title}</h3>
@@ -23,11 +31,13 @@ const listCard = (obj) => {
         <p id="score">Score: ${obj.data.movie_results[0].vote_average}</p>
 
         <p id="year">${obj.geoJSON.features[0].properties["Year"]}</p>
-        <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>`
-    return template;
+        <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>
+        <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>`
+        return template;
 }
 
 const listCardFetch = (template) => {
+    const justWatchTitle = parseForSearch(template.title);
     const newTemplate = `
                             <span data-id="${template.id}" id="destroy">X</span>
                             <h3 id="list-title" data-id="${template.id}">${template.title}</h3>
@@ -35,7 +45,8 @@ const listCardFetch = (template) => {
                             <p id="score">Score: ${template.vote_average}</p>
 
                             <p id="year">${template.release_date.slice(0, 4)}</p>
-                            <a id="imdb-link" href="http://www.imdb.com/title/${template.imdb_id}" target="_blank">IMDB Link</a>`
+                            <a id="imdb-link" href="http://www.imdb.com/title/${template.imdb_id}" target="_blank">IMDB Link</a>
+                            <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>`
         return newTemplate
                 }
 
