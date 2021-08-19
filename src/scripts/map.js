@@ -32,7 +32,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
             // center: [long, lat],
         center: [long,
             lat],
-            zoom: 15
+            zoom: 13
 
         });
 
