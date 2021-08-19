@@ -8,8 +8,16 @@ export { listCard, listCardFetch}
 //     }
 // }
 function parseForSearch(title) {
+    const abc = "abcdefghijklmnopqrstuvwxyz";
     if (title !== undefined){ 
-        title = title.toLowerCase().split(" ").join("-");
+        title = title.toLowerCase().split(" ")
+        title = title.map((word, i)=>{
+            return word.split("").map((char, i) => {
+                if (!abc.includes(char)) char = "";
+                return char;
+            }).join("");
+        })
+        return title.join("-");
     }
     return title;
 }
