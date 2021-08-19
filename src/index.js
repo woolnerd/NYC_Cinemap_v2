@@ -121,9 +121,9 @@ const addToMovieList = (galleryInstance) => {
     let inList = array.some(child => child.children[1].dataset.id.includes(galleryTitle.dataset.id));
 
     if (inList) {
-        console.log("in list")
+        // console.log("in list")
     } else {
-        console.log("not in list");
+        // console.log("not in list");
         movieList.appendChild(listDiv)
         populateStorage(galleryTitle.dataset.id);
     }

@@ -16,7 +16,6 @@ const listCard = (obj) => {
     const title = document.getElementById("gallery-title");
     const overview = document.getElementById("gallery-overview");
     const listContainer = document.getElementsByClassName("list-container");
-    console.log(obj);
     const template =`
         <span data-id="${obj.data.movie_results[0].id}" id="destroy">X</span>
         <h3 id="list-title" data-id="${obj.data.movie_results[0].id}">${obj.data.movie_results[0].title}</h3>
