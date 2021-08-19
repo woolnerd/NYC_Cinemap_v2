@@ -17,7 +17,6 @@ function parseForSearch(title) {
 }
 
 const listCard = (obj) => {
-    console.log(obj);
 
     const image = document.getElementById("card-img");
     // const title = document.getElementById("gallery-title");
