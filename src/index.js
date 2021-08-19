@@ -63,13 +63,15 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const gal = document.getElementById("gallery");
     gal.addEventListener('click', ()=>addToMovieList(gallery))
 
-  
+    const clickBanner = document.querySelector(".gallery-banner");
+    clickBanner.addEventListener('click', ()=>addToMovieList(gallery))
+
     //delete movie from list
     listContainer[0].addEventListener('click', deleteMovieFromList);
 
 
 
-    const searchForm = document.querySelector(".search-form");
+    const searchForm = document.querySelector("#search-form");
     searchForm.addEventListener("submit", locationSearch);
 
    const nav = document.getElementsByTagName("nav");

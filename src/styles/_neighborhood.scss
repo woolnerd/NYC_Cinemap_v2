@@ -9,6 +9,10 @@
  
 }
 
+.neighborhood li:hover {
+    color: $one;
+}
+
 .neighborhood li {
     font-size: 25px;
     font-weight: 600;

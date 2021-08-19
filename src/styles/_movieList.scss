@@ -1,3 +1,8 @@
+$one: #d90429; 
+$two: #ef233c;
+$three: #edf2f4;
+$four: #8d99ae;
+$five: #2b2d42;
 
 aside {
     background-image: url("https://images.unsplash.com/photo-1578496746448-fe831c881a57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80");
@@ -5,7 +10,12 @@ aside {
 }
 
 #imdb-link {
-    font-size: 15px;
+    font-size: 25px;
+    color: $one;
+}
+
+#imdb-link:hover {
+    color: $five;
 }
 
 a {
@@ -13,20 +23,22 @@ a {
     color: #2b2d42;
 }
 
+.aside-banner {
+    margin: auto 0;
+}
 
-aside h2 {
+.gallery-banner{
     color: $three;
     text-align: center;
     font-size: 30px;
-    padding: 10px;
-    background-color: $two;
+    padding: 30px;
+    margin-left: 600px;
+    margin-left: 50%;
+    background-color: $four;
     display: inline-block;
-    // position: absolute;
-    right: 33%;
     border-radius: 10px;
     border: 1px solid $five;
-    // top: 200%;
-    transform: rotate(-45deg);
+
 }
 
 #list-title {
@@ -49,9 +61,15 @@ aside h2 {
     border-radius: 30px;
 }
 
+#destroy {
+    font-size: 30px;
+    font-weight: 600 ;
+    cursor: pointer;
+}
+
 .list-card {
     width: 200px;
-    height: 400px;
+    height: 100%;
     margin: 20px;
     display: flex;
     flex-direction: column;

@@ -35,7 +35,7 @@ const listCardFetch = (template) => {
                             <img id="list-img" src="https://image.tmdb.org/t/p/w500/${template.poster_path}" alt="">
                             <p id="score">Score: ${template.vote_average}</p>
 
-                            <p id="year">${template.release_date.slice(0, 5)}</p>
+                            <p id="year">${template.release_date.slice(0, 4)}</p>
                             <a id="imdb-link" href="htttp://www.imdb.com/title/${template.imdb_id} target="_blank">IMDB Link</a>`
         return newTemplate
                 }

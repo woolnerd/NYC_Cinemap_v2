@@ -1,4 +1,18 @@
 //nav bar
+ul {
+    font-size: 50px;
+    text-align: right;
+    text-transform: lowercase;
+}
+
+a {
+    color: $five;
+
+}
+
+a:hover {
+    color: $three;
+}
 
 nav {
     top: 0;
@@ -22,6 +36,20 @@ nav {
 }
 
 #cur-loc {
+    text-align: left;
     font-size: 25px;
     padding: 10px;
+    font-weight: 600;
+    color: $three;
+}
+
+#loc-input {
+    font-size: 20px;
+}
+#search-btn {
+    width: 215px;
+}
+
+#cur-loc span {
+    color: $four;
 }

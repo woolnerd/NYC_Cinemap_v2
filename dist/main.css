@@ -106,7 +106,12 @@ aside {
 }
 
 #imdb-link {
-  font-size: 15px;
+  font-size: 25px;
+  color: #d90429;
+}
+
+#imdb-link:hover {
+  color: #2b2d42;
 }
 
 a {
@@ -114,17 +119,21 @@ a {
   color: #2b2d42;
 }
 
-aside h2 {
+.aside-banner {
+  margin: auto 0;
+}
+
+.gallery-banner {
   color: #edf2f4;
   text-align: center;
   font-size: 30px;
-  padding: 10px;
-  background-color: #ef233c;
+  padding: 30px;
+  margin-left: 600px;
+  margin-left: 50%;
+  background-color: #8d99ae;
   display: inline-block;
-  right: 33%;
   border-radius: 10px;
   border: 1px solid #2b2d42;
-  transform: rotate(-45deg);
 }
 
 #list-title {
@@ -147,9 +156,15 @@ aside h2 {
   border-radius: 30px;
 }
 
+#destroy {
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .list-card {
   width: 200px;
-  height: 400px;
+  height: 100%;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -238,6 +253,20 @@ table {
   border-spacing: 0;
 }
 
+ul {
+  font-size: 50px;
+  text-align: right;
+  text-transform: lowercase;
+}
+
+a {
+  color: #2b2d42;
+}
+
+a:hover {
+  color: #edf2f4;
+}
+
 nav {
   top: 0;
   height: 200px;
@@ -259,8 +288,23 @@ nav {
 }
 
 #cur-loc {
+  text-align: left;
   font-size: 25px;
   padding: 10px;
+  font-weight: 600;
+  color: #edf2f4;
+}
+
+#loc-input {
+  font-size: 20px;
+}
+
+#search-btn {
+  width: 215px;
+}
+
+#cur-loc span {
+  color: #8d99ae;
 }
 
 body {
@@ -297,7 +341,7 @@ body {
 
 .card h1 {
   font-size: 5rem;
-  transform: rotate(-90deg);
+  width: fit-content;
 }
 
 .card {
@@ -307,7 +351,6 @@ body {
   height: 300px;
   border: 1px solid #8d99ae;
   margin: 10px;
-  background: #2b2d42;
   font-size: 1.5em;
   padding: 10px;
   text-align: center;
@@ -333,10 +376,20 @@ body {
 .card-info {
   width: 300px;
   border-left: 2px solid rgba(141, 153, 174, 0.762);
+  filter: drop-shadow(5px 5px 5px #edf2f4);
+  font-size: 18px;
 }
 
 .main-container {
   background-color: #edf2f4;
+}
+
+#gallery-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px #edf2f4);
 }
 
 #gallery {
@@ -358,6 +411,10 @@ body {
   border: 1px solid #2b2d42;
   background-color: #8d99ae;
   cursor: pointer;
+}
+
+.neighborhood li:hover {
+  color: #d90429;
 }
 
 .neighborhood li {
