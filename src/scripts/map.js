@@ -231,15 +231,9 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
         // div.id = "gallery-current"
         // gallery.appendChild(div);
 
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        // }
 
-        // Populate the popup and set its coordinates
-        // based on the feature found.
+
+      
         popup.setLngLat(coordinates).setHTML(title).addTo(map);
         // const gallery = new Component("h1", "this thing works!", document.body)
         //  gallery.create();
