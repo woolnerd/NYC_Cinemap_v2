@@ -22,6 +22,16 @@ aside {
     border-radius: 10px;;
 }
 
+.link-container {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 5rem;
+}
+
 a {
     text-decoration: none;
     color: #2b2d42;
@@ -59,11 +69,10 @@ a {
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 900px;
-    min-height: 400px;
     height: fit-content;
     border: 1px solid $five;
     margin: 0 auto;
-    border-radius: 30px;
+    // border-radius: 30px;
 }
 
 #destroy {

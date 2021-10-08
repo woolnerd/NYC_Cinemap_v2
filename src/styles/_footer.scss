@@ -10,12 +10,13 @@ $five: #2b2d42;
 .foot-info {
     font-size: 18px;
     text-align: center;
-    padding: 200px;
+    padding: 2%;
     color: $three;
 }
 
 footer {
     background-color: $five;
+    height: 155px;
 }
 
 .cushion {
@@ -23,4 +24,22 @@ footer {
     height: 400px;
     background-color: $four;
     box-shadow: 0 0 5px 10px $four;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project-links ul {
+
+    font-size: 50px;
+    text-align: right;
+    text-transform: lowercase;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 400px;
 }
