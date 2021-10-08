@@ -8,28 +8,28 @@ $five: #2b2d42;
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: $one;  /* fallback for old browsers */
+    background: $five;  /* fallback for old browsers */
     // background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     // background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-position: center;
-    height: 2000px;
     color: $five;
+    height: fit-content;
 }
 
 #banner {
     color: $three;
     text-align: center;
     font-size: 7rem;
-    margin: 50px;
+    // margin: 50px;
     text-shadow: #2b2d42 10px 0 30px;
-    top: 0px;
-    position: absolute;
-    margin-left: 500px;
-    margin-top: 100px;
+    // margin-left: 500px;
+    // margin-top: 100px;
 }
 
 
-
+main {
+    background-color: $one;
+}
 
 .main-container {
     display: flex;
@@ -66,8 +66,9 @@ body {
     filter: drop-shadow(5px 5px 5px $three);
 }
 
-#gallery:hover {
-    background-color: $four;
+.card:hover {
+    background-color: black;
+    color: $two;
 }
 
 .card-info h2, h3, h4, h5, p {

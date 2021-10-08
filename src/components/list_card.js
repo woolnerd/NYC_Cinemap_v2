@@ -31,8 +31,11 @@ const listCard = (obj) => {
         <p id="score">Score: ${obj.data.movie_results[0].vote_average}</p>
 
         <p id="year">${obj.geoJSON.features[0].properties["Year"]}</p>
-        <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>
-        <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>`
+        <div class="link-container">
+            <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>
+            <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>
+        </div>
+        `
         return template;
 }
 
