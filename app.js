@@ -17,7 +17,7 @@ app.get("/", (request, response) => {
 // `request` object contains request's query string, wildcard params, etc
 // `response` object has `send` method for sending our server response
 app.get('/cors', (request, response) => {
-  console.log(`Fetching: ${request.query.url}`);
+  // console.log(`Fetching: ${request.query.url}`);
 
   fetch(request.query.url) // AJAX request to URL provided in query string
     .then(apiResponse => apiResponse.json()) // parse response as JSON
@@ -32,7 +32,7 @@ app.get('/api', (request, response) => {
   const imdbID = request.query.imdbID; // from query string
   const url = `${urlStart}/${imdbID}?api_key=${apiKey}&language=en-US&external_source=imdb_id`;
 
-  console.log(`Fetching: ${url}`);
+  // console.log(`Fetching: ${url}`);
 
   fetch(url) // AJAX request to API
     .then(apiResponse => apiResponse.json())
@@ -42,5 +42,5 @@ app.get('/api', (request, response) => {
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-  console.log(`Listening at localhost:${PORT}`);
+  // console.log(`Listening at localhost:${PORT}`);
 });
