@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
     // const button = document.querySelector('#search-btn');
     // button.addEventListener('click', ()=>console.log("good"))
 
-
     //fetches imdb numbers from local storage to populate list;
     fetchPopulateList(getListData, dataStore);
 
