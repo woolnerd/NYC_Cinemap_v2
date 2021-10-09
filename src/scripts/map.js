@@ -3,8 +3,8 @@ import mapboxgl from 'mapbox-gl'
 export { makeMap };
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWR3b29sbmVyIiwiYSI6ImNrczliam40MzB0YTIydm9ja2x3NDN5cnQifQ.WodjI99jg0lWF31OhaXCFA';
 import { Component } from "../components/component"
-import { geoJSON } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/assets/scene_data.js';
-import { getData } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/scripts/movie'
+import { geoJSON } from '../assets/scene_data';
+// import { getData } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/scripts/movie'
 import { addToGallery } from "../index";
 import { DataStore } from "../components/gallery"
 import { listCard } from '../components/list_card';
@@ -15,12 +15,12 @@ export const gallery = new DataStore();
 
 const makeMap = (long = -73.98015, lat = 40.782838) => {
     //create new map object, container grabs from div with id of map
-    const generateMarkers = (lon, lat, str1, str2) => {
+    const generateMarkers = (lon, lat, str1) => {
         const marker = new mapboxgl.Marker({ color: "#d80000" })
             .setLngLat([lon, lat])
-            .setPopup(new mapboxgl.Popup().setHTML(`<h3 class="marker-info">${str1}</h1>
-              <h2 class="marker-lon-lat">${str2}</h2>`)) // add popup
-            .addTo(map);
+            .setPopup(new mapboxgl.Popup().setHTML(`<h3 class="marker-info">${str1}</h1>`)) 
+            // add popup
+            .addTo(map)
 
     }
     
@@ -44,7 +44,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     // });
     map.on('load', () => {
         // Add an image to use as a custom marker
-        generateMarkers(long, lat, "You are here!", 
+        generateMarkers(long, lat, "You are here!"
         // `7 films were shot within 10 blocks of you!`
         )
 
@@ -250,14 +250,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
         popup.remove();
     });
 }
-        // scene_data.slice(1).forEach(film => {
-        //     if (film["IMDB LINK"] !== null) { 
-        //         let imdbID = film["IMDB LINK"];
-        //         imdbID = imdbID.split("/")[4]
-        //         generateMarkers(film.LONGITUDE, film.LATITUDE, film.Film, imdbID);
-        //     };
-        // })
-
+     
 
 
 
