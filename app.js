@@ -18,8 +18,13 @@ app.get("/", (request, response) => {
 // `response` object has `send` method for sending our server response
 app.get('/cors', (request, response) => {
   // console.log(`Fetching: ${request.query.url}`);
+    const urlStart = "https://api.themoviedb.org/3/movie/";
+    const apiKey = process.env.MOVIE_DB_API_KEY; // from .env (dev) or Heroku
+    const imdbID = request.query.imdbID; // from query string
+    const url = `${urlStart}/${imdbID}?api_key=${apiKey}&language=en-US&external_source=imdb_id`;
 
-  fetch(request.query.url) // AJAX request to URL provided in query string
+
+  fetch(url) // AJAX request to URL provided in query string
     .then(apiResponse => apiResponse.json()) // parse response as JSON
     .then(data => response.send(data)) // send parsed data to frontend
     .catch(error => response.send(error));

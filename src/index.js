@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
     //fetches imdb numbers from local storage to populate list;
     fetchPopulateList(getListData, dataStore);
 
+    // document.getElementsByTagName("aside")[0].className += "hide";
+    
 
 
     //renders map with current location
@@ -65,8 +67,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     //delete movie from list
     listContainer[0].addEventListener('click', deleteMovieFromList);
-
-
 
     const searchForm = document.querySelector("#search-form");
     searchForm.addEventListener("submit", locationSearch);
@@ -109,7 +109,7 @@ const addToMovieList = (galleryInstance) => {
     const galleryTitle = document.getElementById("gallery-title");
     const movieList = document.querySelector(".list-container"); 
     const mlNodeList = document.querySelectorAll(".list-card");
-    const listDiv = document.createElement("div")
+    const listDiv = document.createElement("div");
 
     listDiv.className = "list-card"
     listDiv.innerHTML = listCard(galleryInstance);

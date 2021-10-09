@@ -202,9 +202,8 @@ a {
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 900px;
+  width: 60%;
   height: fit-content;
-  border: 1px solid #2b2d42;
   margin: 0 auto;
 }
 
@@ -280,6 +279,10 @@ a {
 
 #list-img {
   margin-top: 10px;
+}
+
+.hide {
+  display: none;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

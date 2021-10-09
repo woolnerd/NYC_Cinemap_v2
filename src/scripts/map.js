@@ -38,10 +38,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
 
     const coordinates = geoJSON.features[0].geometry.coordinates.slice()
         
-    // coordinates.forEach(coord=>{
-    //     console.log(coord[1])
-    //     generateMarkers(coord[0], coord[1], "test", "test")
-    // });
+
     map.on('load', () => {
         // Add an image to use as a custom marker
         generateMarkers(long, lat, "You are here!"
@@ -140,43 +137,6 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
 
         });
 
-
-        //     map.loadImage(
-        //         'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
-        //         (error, image) => {
-        //             if (error) throw error;
-        //             map.addImage('custom-marker', image);
-        //             // Add a GeoJSON source with 2 points
-        //             map.addSource('points', {
-        //                 'type': 'geojson',
-        //                 'data': geoJSON
-        //             });
-
-        //             // Add a symbol layer
-        //             map.addLayer({
-        //                 'id': 'points',
-        //                 'type': 'symbol',
-        //                 'source': 'points',
-        //                 'layout': {
-        //                     'icon-image': 'custom-marker'
-        //                     // get the title name from the source's "title" property
-        //                     // 'text-field': ['get', ""],
-        //                     // 'text-font': [
-        //                     //     'Open Sans Semibold',
-        //                     //     'Arial Unicode MS Bold'
-        //                     // ],
-        //                     // 'text-offset': [0, 1.25],
-        //                     // 'text-anchor': 'top'
-        //                     // 'icon-color': '#000'
-
-        //                     // ["rgb", number, number, number]: color
-        //                 }
-        //             });
-        //         }
-        //     );
-        // });
-            
-           
             
     const popup = new mapboxgl.Popup({
         closeButton: false,
@@ -226,17 +186,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
                 );
             });
             
-        // const title = e.features[0].properties["Film"];
-        // const year = e.features[0].properties["Year"];
-        // const gallery = document.querySelector("#gallery");
-        // const div = document.createElement("div");
-        // div.innerHTML =`<h1>${title}</h1><h2>${year}</h2>` ;
-        // div.id = "gallery-current"
-        // gallery.appendChild(div);
 
-
-
-      
         popup.setLngLat(coordinates).setHTML(title).addTo(map);
         // const gallery = new Component("h1", "this thing works!", document.body)
         //  gallery.create();

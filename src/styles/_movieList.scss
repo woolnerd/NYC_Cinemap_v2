@@ -67,9 +67,9 @@ a {
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 900px;
+    width: 60%;
     height: fit-content;
-    border: 1px solid $five;
+    // border: 1px solid $five;
     margin: 0 auto;
     // border-radius: 30px;
 }
@@ -146,3 +146,7 @@ a {
 #list-img {
     margin-top: 10px;
 } 
+
+.hide {
+    display: none;
+}
