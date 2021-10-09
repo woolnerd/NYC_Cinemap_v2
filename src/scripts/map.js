@@ -44,7 +44,9 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     // });
     map.on('load', () => {
         // Add an image to use as a custom marker
-        generateMarkers(long, lat, "You are here!", `7 films were shot within 10 blocks of you!`)
+        generateMarkers(long, lat, "You are here!", 
+        // `7 films were shot within 10 blocks of you!`
+        )
 
         geoJSON.features.forEach(function (marker) {
         // create a HTML element for each feature
@@ -101,29 +103,27 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
                 }
                 gallery.addJSON(fakeJSON);
                 // console.log(e);
-                getData(e.target.dataset.imdb)
-                    .then((response) => {
-                        if (!response.ok) {
-                            throw new Error("Error with network response");
-                        }
-                        return response.json();
-                    })
-                    .then((data) => {
-                        gallery.addRes(data);
-                        addToGallery();
-
-                    })
-                    .catch((error) => {
-                        console.error(
-                            "Problem intercepted: ",
-                            error
-                        );
-                    });
-
-
+    
+                // apiRequest(e.target.dataset.imdb)
+                //     .then(res => console.log(res))
+    fetch(`/api?imdbID=${encodeURIComponent(e.target.dataset.imdb)}`)
+      // apiRequest(e.target.dataset.imdb)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error with network response");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        gallery.addRes(data);
+        addToGallery();
+      })
+      .catch((error) => {
+        console.error("Problem intercepted: ", error);
+      });
 
             })
-        })
+        });
 
         // add navigation controls
         map.addControl(new mapboxgl.NavigationControl());
@@ -204,7 +204,10 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
 
         imdbID = imdb.split("/")[4]
 
-        getData(imdbID)
+        fetch(`/api?imdbID=${encodeURIComponent(imdbID)}`)
+           
+
+        // apiRequest(imdbID)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Error with network response");
