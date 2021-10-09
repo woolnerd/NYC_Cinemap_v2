@@ -1,4 +1,3 @@
-import { Component } from "./component";
 export { listCard, listCardFetch}
 
 function parseForSearch(title) {

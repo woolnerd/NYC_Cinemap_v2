@@ -2,13 +2,13 @@
 import mapboxgl from 'mapbox-gl'
 export { makeMap };
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWR3b29sbmVyIiwiYSI6ImNrczliam40MzB0YTIydm9ja2x3NDN5cnQifQ.WodjI99jg0lWF31OhaXCFA';
-import { Component } from "../components/component"
 import { geoJSON } from '../assets/scene_data';
 // import { getData } from '/Users/davidwoolner/Desktop/AppAcademy/NYC_Cinemap/src/scripts/movie'
 import { addToGallery } from "../index";
 import { DataStore } from "../components/gallery"
 import { listCard } from '../components/list_card';
 
+window.geoJSON = geoJSON
 export let imdbID = "tt0075686";
 
 export const gallery = new DataStore();

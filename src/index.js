@@ -1,5 +1,3 @@
-
-
 import { modalAppear } from "./scripts/js_fun";
 import { populateStorage, removeFromStorage, fetchPopulateList, newDataStore } from "./scripts/utils";
 import { getListData, movieData } from "./scripts/movie"
