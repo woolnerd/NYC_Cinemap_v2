@@ -33,7 +33,7 @@ function removeFromStorage(id) {
 
 
 //fetch movie data
-function fetchPopulateList(fetchCB, DataStore) {
+function fetchPopulateList(DataStore) {
     if (localStorage.getItem("listItems")) {
         let items = localStorage.getItem("listItems");
         const arr = JSON.parse(items);

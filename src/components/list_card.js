@@ -1,15 +1,30 @@
 export { listCard, listCardFetch}
 
 function parseForSearch(title) {
-    const abc = "abcdefghijklmnopqrstuvwxyz";
+    const abc = "abcdefghijklmnopqrstuvwxyz0123456789";
     if (title !== undefined){ 
         title = title.toLowerCase().split(" ")
-        title = title.map((word, i)=>{
-            return word.split("").map((char, i) => {
+        if (title.includes("die") && title.includes("hard:")) {
+            return "die-hard-3";
+        }
+        if (title === ["fort", "apache", "the", "bronx"]) {
+            return "the-verdict";
+        }
+        if (title.includes("downtown")) {
+            return "new-york-beat-movie";
+        }
+        if (title.includes("professional")){
+            return "leon-the-professional";
+        }
+          title = title.map((word, i) => {
+            return word
+              .split("")
+              .map((char, i) => {
                 if (!abc.includes(char)) char = "";
                 return char;
-            }).join("");
-        })
+              })
+              .join("");
+          });
         return title.join("-");
     }
     return title;
@@ -42,14 +57,25 @@ const listCardFetch = (template) => {
     const justWatchTitle = parseForSearch(template.title);
     const newTemplate = `
                             <span data-id="${template.id}" id="destroy">X</span>
-                            <h3 id="list-title" data-id="${template.id}">${template.title}</h3>
-                            <img id="list-img" src="https://image.tmdb.org/t/p/w500/${template.poster_path}" alt="">
+                            <h3 id="list-title" data-id="${template.id}">${
+      template.title
+    }</h3>
+                            <img id="list-img" src="https://image.tmdb.org/t/p/w500/${
+                              template.poster_path
+                            }" alt="">
                             <p id="score">Score: ${template.vote_average}</p>
 
-                            <p id="year">${template.release_date.slice(0, 4)}</p>
-                            <a id="imdb-link" href="http://www.imdb.com/title/${template.imdb_id}" target="_blank">IMDB Link</a>
-                            <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>`
-        return newTemplate
+                            <p id="year">${template.release_date.slice(
+                              0,
+                              4
+                            )}</p>
+                            <div class="link-container">
+                            <a id="imdb-link" href="http://www.imdb.com/title/${
+                              template.imdb_id
+                            }" target="_blank">IMDB Link</a>
+                            <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>
+                            </div>`;
+                            return newTemplate
                 }
 
 

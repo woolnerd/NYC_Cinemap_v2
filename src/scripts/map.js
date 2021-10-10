@@ -32,7 +32,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
             // center: [long, lat],
         center: [long,
             lat],
-            zoom: 13
+            zoom: 14
 
         });
 
@@ -153,12 +153,7 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
         const title = e.features[0].properties["Film"];
         // const year = e.features[0].properties["Year"]
         const imdb = e.features[0].properties["IMDB LINK"];
-        // const credit = e.features[0].properties["Artist Credit"];
-        // const director = e.features[0].properties["Director/Filmmaker Name"];
-        // const location = e.features[0].properties["Location Display Text"];
-        // const neighborhood = e.features[0].properties["Location Display Text"];
-        // const sceneType = e.features[0].properties["Scene Type"];
-
+   
         //add the data from the geoJSON Mayor's office data here
         gallery.addJSON(e);
 
@@ -201,48 +196,3 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     });
 }
      
-
-
-
-
-
-
-    // const popup = new mapboxgl.Popup({
-    //     closeButton: false,
-    //     closeOnClick: false
-    // });
-
-
-    //     //add marker to map
-    // const marker = new mapboxgl.Marker()
-    //     .setLngLat([-74.0079, 40.7137])
-    //     .setPopup(new mapboxgl.Popup().setHTML("<h1>Hello World!</h1>")) // add popup
-    //     .addTo(map);
-    // const { success, error, options} = location;
-
-    
-
-
-    // //iterate over every film but for first object which is column info
-
-    // //current user marker
-    
-
-
- 
-
-// geoJSON.features.forEach(function (marker) {
-//     // create a HTML element for each feature
-//     var el = document.createElement('div');
-//     el.className = 'marker';
-
-
-
-// make a marker for each feature and add to the map
-// new mapboxgl(el)
-//     .setLngLat(marker.geometry.coordinates)
-//     .addTo(map)
-//     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-//         .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
-//     .addTo(map);
-//         });

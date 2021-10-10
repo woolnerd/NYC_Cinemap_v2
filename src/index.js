@@ -6,7 +6,6 @@ import { Component } from "./components/component";
 import { gallery } from "./scripts/map";
 import { getLocation, locationSearch } from "./scripts/location";
 import { listCard } from "./components/list_card"
-// import * as boroughs from "./scripts/boroughs";
 export { addToGallery }
 import styles from "./index.scss"
 import { DataStore } from "./components/gallery";
@@ -28,18 +27,6 @@ const addToGallery = () => {
 const listContainer = document.getElementsByClassName("list-container");
 
 
-//attempt to add templates(became objects of data response)
-// setTimeout(() => buildList(DataStore.templates), 500);
-
-// function buildList(templates) {
-//     console.log(templates)
-//     templates.forEach(template => {
-
-//     })
-
-// }
-
-
 document.addEventListener("DOMContentLoaded", ()=> {
     // setTimeout(()=>modalAppear(), 2000);
 
@@ -47,7 +34,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     // button.addEventListener('click', ()=>console.log("good"))
 
     //fetches imdb numbers from local storage to populate list;
-    fetchPopulateList(getListData, dataStore);
+    fetchPopulateList(dataStore);
 
     // document.getElementsByTagName("aside")[0].className += "hide";
     
@@ -129,11 +116,6 @@ const addToMovieList = (galleryInstance) => {
 
 
 
-
-
-
-
-
 const options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -143,7 +125,6 @@ const options = {
 function success(pos) {
     //map is created here
     makeMap(pos.coords.longitude, pos.coords.latitude);
-
 }
 
 function error(err) {

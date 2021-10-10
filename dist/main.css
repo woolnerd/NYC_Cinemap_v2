@@ -148,19 +148,31 @@ aside {
   font-size: 25px;
   color: #d90429;
   padding: 5px;
+  border-radius: 5px;
 }
 
 #imdb-link:hover {
+  transition: background 0.3s ease;
   color: #2b2d42;
   background: #d90429;
   border: 1px solid #edf2f4;
-  border-radius: 10px;
+}
+
+#just-watch-link {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#just-watch-link:hover {
+  transition: background 0.3s ease;
+  background: #d90429;
+  border: 1px solid #edf2f4;
 }
 
 .link-container {
   display: flex;
   flex-direction: column;
-  align-content: space-around;
+  align-content: flex-start;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -258,17 +270,6 @@ a {
 
 .hide {
   display: none;
-}
-
-#just-watch-link {
-  padding: 5px;
-  padding-left: 20px;
-}
-
-#just-watch-link:hover {
-  background: #d90429;
-  border: 1px solid #edf2f4;
-  border-radius: 10px;
 }
 
 #list-title {

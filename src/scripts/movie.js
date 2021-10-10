@@ -29,7 +29,7 @@ export const gallery = new DataStore();
 // }
 
 
-// export async function getListData(imdbID) {
+export async function getListData(imdbID) {
 //     const apiKey = "";
 
 //     const getByIMDBid = (imdbID, apiKey) => {
@@ -40,7 +40,7 @@ export const gallery = new DataStore();
 
 //     const response = await fetch(url);
 //     return response;
-// }
+}
 
 
 
