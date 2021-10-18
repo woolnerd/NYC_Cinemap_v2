@@ -5,7 +5,9 @@ Aug, 12th, 2021
 
   # ***NYC Cinemap*** 
   ### a NYC Film Production Map App
+Check it out: [CWM](http://nyc-cinemap.herokuapp.com/#/)
 
+![App Overview](https://media.giphy.com/media/4mSvgNHWv79CXvGwin/giphy.gif)
 
 ### Background
 As a veteran of the NYC film industry, my goal with this app is to shine a light on moments of cinematic history that may be right around the corner from you.
