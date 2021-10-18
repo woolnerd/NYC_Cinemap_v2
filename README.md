@@ -5,12 +5,16 @@ Check it out: [Live site](http://nyc-cinemap.herokuapp.com/#/)
 
 ![App Overview](https://media.giphy.com/media/4mSvgNHWv79CXvGwin/giphy.gif)
 
-### Background
+## Background
 As a veteran of the NYC film industry, my goal with this app is to shine a light on moments of cinematic history that may be right around the corner from you.
 
 Thanks to the NYC Mayor's Office in providing their dataset "Scenes from the City", which offers latitude and longitude of about 200 films, the aim of this app is to draw from the user's current location (somewhere in NYC), and populate the site with several of the titles that were filmed just blocks away. The user can then see title, and trivia information regarding the film, and with some kind of data persistence, be able to save these films to a list with links to sites where they may be viewed. 
 
-### Functionality & MVPs
+<img src="https://erabnb-seed-data.s3.amazonaws.com/nyc-cinemap-readme-photo/Screen+Shot+2021-10-18+at+9.42.29+AM.png" alt="front page" width="500"/>
+<img src="https://erabnb-seed-data.s3.amazonaws.com/nyc-cinemap-readme-photo/Screen+Shot+2021-10-18+at+9.44.18+AM.png" alt="movei list" width="500"/>
+
+
+## Functionality & MVPs
 
 Users will be able to:
 
@@ -20,7 +24,7 @@ Users will be able to:
 
 - Film data will be fetched from an IMDB-like API, and populate the interface with the movie details, images, links, etc.
 
-###  Additionally
+##  Additionally
 
 -  It would be great to be able to persist a list of the movies to be watched. I'm thinking the user can save any or all of the movies by ids in local storage and fetch it to repopulate the list when the user revisits the site. 
 
@@ -29,7 +33,7 @@ Users will be able to:
 
 	![wireframe](./proposal/docs/nyc_cinemap_wireframe.png)
   
-###  Technologies, Libraries, APIs
+##  Technologies, Libraries, APIs
 
 - Mapbox GL JS library to render the map that will feature a pin for the users location as well as surrounding film locations.
 
@@ -49,7 +53,7 @@ Users will be able to:
 
 - Possible backend for persisitng API tokens. 
 
-###  Implementation Timeline
+##  Implementation Timeline
 
 - ***Friday and weekend***:
     research the various APIs I'll be using, and understand how to implement them. Do we need a backend for API tokens? Get very familiar with Postman and be able to fetch all the data. Be able to grab location data from user. Clean and get NYC dataset ready for use.
@@ -60,7 +64,7 @@ Users will be able to:
 
 - ***Wednesday***: Continue tweaking css. Work on localStorage to persist a list of movies to be watched. Deploy to server.
 
-###  Bonus Features:
+##  Bonus Features:
 
 - media queries for mobile friendly viewing
 
@@ -74,7 +78,7 @@ Users will be able to:
 
 - film trivia
 
-### Challenges:
+## Challenges:
 
 ### Coupling Data Sources 
 * One of the trickiest parts of this project was coupling data from two sources. I had the data from the NYC Mayor's office, which had very unique information for each film location. But on top of that, I needed to utilize the OMDB API data because it was the freshest data and had more details about each film. But how to merge this information without having a backend DB? My solution was to create a class that would act like a data store. I named it appropriately "DataStore". Each instance of the DataStore class would have a method to accept the Mayor's office data, which was coming from the map markers where I embedded it. As well as a method to take in the incoming API data. The real magic happened with the createTemplate method, as this is the function that returned the gallery component, populated with the coupled data.
