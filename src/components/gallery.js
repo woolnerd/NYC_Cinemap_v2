@@ -42,7 +42,6 @@ DataStore.prototype.addJSON = function(geoJSON) {
 
 
 DataStore.prototype.createTemplate = function() {
-    // console.log(this.geoJSON);
     let scene = this.geoJSON.features[0].properties["Scene Type"];
 
     if (scene === 'N/A') {
