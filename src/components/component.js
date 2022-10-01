@@ -1,5 +1,4 @@
-export { Component };
-class Component {
+export class Component {
   constructor(elType, content, parentNode) {
     this.elType = elType;
     this.content = content;

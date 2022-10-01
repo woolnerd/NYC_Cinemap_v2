@@ -1,18 +1,12 @@
-import { modalAppear } from "./scripts/js_fun";
 import {
   populateStorage,
   removeFromStorage,
   fetchPopulateList,
-  newDataStore,
 } from "./scripts/utils";
-import { getListData, movieData } from "./scripts/movie";
 import { makeMap } from "./scripts/map";
-import { Component } from "./components/component";
 import { gallery } from "./scripts/map";
-import { getLocation, locationSearch } from "./scripts/location";
+import { locationSearch } from "./scripts/location";
 import { listCard } from "./components/list_card";
-export { addToGallery };
-import styles from "./index.scss";
 import { DataStore } from "./components/gallery";
 
 const dataStore = new DataStore();
@@ -112,3 +106,5 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
   makeMap(-74.0079, 40.7137);
 }
+
+export { addToGallery };

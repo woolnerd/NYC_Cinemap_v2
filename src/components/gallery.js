@@ -1,8 +1,4 @@
-export { DataStore };
-
-window.DataStore = DataStore;
-
-function DataStore() {
+export function DataStore() {
   this.templates = [];
 }
 
@@ -58,3 +54,5 @@ DataStore.prototype.createTemplate = function () {
                 </div>`;
   return template;
 };
+
+window.DataStore = DataStore;

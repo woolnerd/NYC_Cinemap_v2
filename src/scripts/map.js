@@ -1,16 +1,15 @@
 import mapboxgl from "mapbox-gl";
-export { makeMap };
 mapboxgl.accessToken = process.env.MAP_BOX_API_KEY;
+
 import { geoJSON } from "../assets/scene_data";
 import { addToGallery } from "../index";
 import { DataStore } from "../components/gallery";
 
-window.geoJSON = geoJSON;
-export let imdbID = "tt0075686";
+export const imdbID = "tt0075686";
 
 export const gallery = new DataStore();
 
-const makeMap = (long = -73.98015, lat = 40.782838) => {
+export const makeMap = (long = -73.98015, lat = 40.782838) => {
   //create new map object, container grabs from div with id of map
   const generateMarkers = (lon, lat, str1) => {
     const marker = new mapboxgl.Marker({ color: "#d80000" })
@@ -162,3 +161,5 @@ const makeMap = (long = -73.98015, lat = 40.782838) => {
     popup.remove();
   });
 };
+
+window.geoJSON = geoJSON;

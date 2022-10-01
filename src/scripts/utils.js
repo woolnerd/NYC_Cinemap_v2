@@ -1,4 +1,3 @@
-export { populateStorage, removeFromStorage, fetchPopulateList, newDataStore };
 import { DataStore } from "../components/gallery";
 import { listCardFetch } from "../components/list_card";
 
@@ -62,3 +61,5 @@ function fetchPopulateList(DataStore) {
     });
   }
 }
+
+export { populateStorage, removeFromStorage, fetchPopulateList, newDataStore };

@@ -1,5 +1,3 @@
-export { listCard, listCardFetch };
-
 function parseForSearch(title) {
   const abc = "abcdefghijklmnopqrstuvwxyz0123456789";
   if (title !== undefined) {
@@ -74,3 +72,5 @@ const listCardFetch = (template) => {
                             </div>`;
   return newTemplate;
 };
+
+export { listCard, listCardFetch };

@@ -1,7 +1,6 @@
-export { getLocation, locationSearch };
 import { makeMap } from "./map";
 
-async function getLocation(address) {
+export async function getLocation(address) {
   const apiKey =
     "pk.eyJ1IjoiZGF2aWR3b29sbmVyIiwiYSI6ImNrczliam40MzB0YTIydm9ja2x3NDN5cnQifQ.WodjI99jg0lWF31OhaXCFA";
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${apiKey}`;
@@ -10,7 +9,7 @@ async function getLocation(address) {
 }
 
 //search for location from input
-function locationSearch(e) {
+export function locationSearch(e) {
   e.preventDefault();
   const locInput = document.querySelector("#loc-input");
   const address = locInput.value;
