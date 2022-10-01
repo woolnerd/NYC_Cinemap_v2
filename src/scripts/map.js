@@ -1,6 +1,6 @@
 import mapboxgl from "mapbox-gl";
-require("dotenv").config();
-mapboxgl.accessToken = process.env.MAP_BOX_API_KEY;
+const apiKey = process.env.MAP_BOX_API_KEY;
+mapboxgl.accessToken = apiKey;
 
 import { geoJSON } from "../assets/scene_data";
 import { addToGallery } from "../index";
