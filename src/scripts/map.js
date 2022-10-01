@@ -1,4 +1,5 @@
 import mapboxgl from "mapbox-gl";
+require("dotenv").config();
 mapboxgl.accessToken = process.env.MAP_BOX_API_KEY;
 
 import { geoJSON } from "../assets/scene_data";
