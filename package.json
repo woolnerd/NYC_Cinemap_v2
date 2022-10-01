@@ -2,7 +2,7 @@
   "name": "NYC_Cinemap",
   "version": "1.0.0",
   "description": "Aug, 12th, 2021",
-  "main": "src/index.js",
+  "main": "app.js",
   "browserslist": [
     "defaults"
   ],
