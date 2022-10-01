@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static("dist"));
 
 app.get("/", (request, response) => {
-  response.sendFile(`${__dirname}/dist/index.html`);
+  response.sendFile('index.html', {root: 'dist'});
 });
 
 // `GET /cors` requests trigger this callback (like controller action)
