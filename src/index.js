@@ -11,7 +11,7 @@ import { DataStore } from "./components/gallery";
 
 const dataStore = new DataStore();
 
-const addToGallery = () => {
+export const addToGallery = () => {
   document.getElementById("gallery").innerHTML = gallery.createTemplate();
 };
 
@@ -100,11 +100,9 @@ const options = {
 function success(pos) {
   //map is created here
   makeMap(pos.coords.longitude, pos.coords.latitude);
-}
+};
 
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
   makeMap(-74.0079, 40.7137);
-}
-
-export { addToGallery };
+};
