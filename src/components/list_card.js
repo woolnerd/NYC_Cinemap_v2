@@ -1,44 +1,41 @@
-export { listCard, listCardFetch}
+export { listCard, listCardFetch };
 
 function parseForSearch(title) {
-    const abc = "abcdefghijklmnopqrstuvwxyz0123456789";
-    if (title !== undefined){ 
-        title = title.toLowerCase().split(" ")
-        if (title.includes("die") && title.includes("hard:")) {
-            return "die-hard-3";
-        }
-        if (title === ["fort", "apache", "the", "bronx"]) {
-            return "the-verdict";
-        }
-        if (title.includes("downtown")) {
-            return "new-york-beat-movie";
-        }
-        if (title.includes("professional")){
-            return "leon-the-professional";
-        }
-          title = title.map((word, i) => {
-            return word
-              .split("")
-              .map((char, i) => {
-                if (!abc.includes(char)) char = "";
-                return char;
-              })
-              .join("");
-          });
-        return title.join("-");
+  const abc = "abcdefghijklmnopqrstuvwxyz0123456789";
+  if (title !== undefined) {
+    title = title.toLowerCase().split(" ");
+    if (title.includes("die") && title.includes("hard:")) {
+      return "die-hard-3";
     }
-    return title;
+    if (title === ["fort", "apache", "the", "bronx"]) {
+      return "the-verdict";
+    }
+    if (title.includes("downtown")) {
+      return "new-york-beat-movie";
+    }
+    if (title.includes("professional")) {
+      return "leon-the-professional";
+    }
+    title = title.map((word, i) => {
+      return word
+        .split("")
+        .map((char, i) => {
+          if (!abc.includes(char)) char = "";
+          return char;
+        })
+        .join("");
+    });
+    return title.join("-");
+  }
+  return title;
 }
 
 const listCard = (obj) => {
-
-    const image = document.getElementById("card-img");
-    // const title = document.getElementById("gallery-title");
-    // const overview = document.getElementById("gallery-overview");
-    // const listContainer = document.getElementsByClassName("list-container");
-
-    const justWatchTitle = parseForSearch(obj.geoJSON.features[0].properties["Film"]);
-    const template =`
+  const image = document.getElementById("card-img");
+  const justWatchTitle = parseForSearch(
+    obj.geoJSON.features[0].properties["Film"]
+  );
+  const template = `
         <span data-id="${obj.data.movie_results[0].id}" id="destroy">X</span>
         <h3 id="list-title" data-id="${obj.data.movie_results[0].id}">${obj.data.movie_results[0].title}</h3>
         <img id="list-img" src="${image.src}" alt="">
@@ -49,17 +46,17 @@ const listCard = (obj) => {
             <a id="imdb-link" href="${obj.geoJSON.features[0].properties["IMDB LINK"]}" target="_blank">IMDB Link</a>
             <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>
         </div>
-        `
-        return template;
-}
+        `;
+  return template;
+};
 
 const listCardFetch = (template) => {
-    const justWatchTitle = parseForSearch(template.title);
-    const newTemplate = `
+  const justWatchTitle = parseForSearch(template.title);
+  const newTemplate = `
                             <span data-id="${template.id}" id="destroy">X</span>
                             <h3 id="list-title" data-id="${template.id}">${
-      template.title
-    }</h3>
+    template.title
+  }</h3>
                             <img id="list-img" src="https://image.tmdb.org/t/p/w500/${
                               template.poster_path
                             }" alt="">
@@ -75,9 +72,5 @@ const listCardFetch = (template) => {
                             }" target="_blank">IMDB Link</a>
                             <a id="just-watch-link" href="https://www.justwatch.com/us/movie/${justWatchTitle}" target="_blank">Just Watch Link</a>
                             </div>`;
-                            return newTemplate
-                }
-
-
-
-
+  return newTemplate;
+};
