@@ -1,6 +1,4 @@
 import mapboxgl from "mapbox-gl";
-const apiKey = process.env.MAP_BOX_API_KEY;
-mapboxgl.accessToken = apiKey;
 
 import { geoJSON } from "../assets/scene_data";
 import { addToGallery } from "../index";
@@ -21,6 +19,9 @@ export const makeMap = (long = -73.98015, lat = 40.782838) => {
       // add popup
       .addTo(map);
   };
+
+  const apiKey = process.env.MAP_BOX_API_KEY;
+  mapboxgl.accessToken = apiKey;
 
   const map = new mapboxgl.Map({
     container: "map",
