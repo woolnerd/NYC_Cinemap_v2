@@ -20,7 +20,7 @@ export const makeMap = (long = -73.98015, lat = 40.782838) => {
       .addTo(map);
   };
 
-  const apiKey = process.env.MAP_BOX_API_KEY;
+  const apiKey = 'pk.eyJ1IjoiZGF2aWR3b29sbmVyIiwiYSI6ImNrczliam40MzB0YTIydm9ja2x3NDN5cnQifQ.WodjI99jg0lWF31OhaXCFA';
   mapboxgl.accessToken = apiKey;
 
   const map = new mapboxgl.Map({
