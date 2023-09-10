@@ -116,7 +116,7 @@ export const geoJSON = createGeoJSON1(scene_data)
 ```
 
 ### Fetch and populate from local storage 
-* Without having a backend to work with, the only way to persist the movie list was to by saving the list to the local storage API. I saved an array containing the IMDB ids for the films of the list. This would require that on each refresh of the page, that the array of ids is iterated over, and a fetch call is made for each id. The list is then populated with the returned data. Desigining this functionality was a big challenge, but it was the most rewarding as I think it makes the project at truly useful app.  
+* Without having a backend to work with, the only way to persist the movie list was by saving the list to the local storage API. I saved an array containing the IMDB ids for the films of the list. This would require that on each refresh of the page, that the array of ids is iterated over, and a fetch call is made for each id. The list is then populated with the returned data. Desigining this functionality was a big challenge, but it was the most rewarding as I think it makes the project a truly useful app.  
 
 ```js
 function fetchPopulateList(DataStore) {
