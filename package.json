@@ -1,5 +1,5 @@
 {
-  "name": "NYC_Cinemap",
+  "name": "nyc-cinemap",
   "version": "1.0.0",
   "description": "Aug, 12th, 2021",
   "main": "./src/index.js",
@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DavidWoolner/NYC_Cinemap.git"
+    "url": "git+https://github.com/woolnerd/NYC_Cinemap.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DavidWoolner/NYC_Cinemap/issues"
+    "url": "https://github.com/woolnerd/NYC_Cinemap/issues"
   },
-  "homepage": "https://github.com/DavidWoolner/NYC_Cinemap#readme",
+  "homepage": "https://github.com/woolnerd/NYC_Cinemap#readme",
   "dependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
