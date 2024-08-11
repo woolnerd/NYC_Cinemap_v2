@@ -7,7 +7,7 @@
     "defaults"
   ],
   "engines": {
-    "node": "14.17.5"
+    "node": "21.7.1"
   },
   "scripts": {
     "start": "node app.js",
